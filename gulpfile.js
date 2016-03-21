@@ -12,6 +12,10 @@ var gulpJshint = require('gulp-jshint');
 var stylish = require('gulp-jscs-stylish');
 var gulpPrint = require('gulp-print');
 var gulpUtil = require('gulp-util');
+var gulpImagemin = require('gulp-imagemin');
+var gulpPlumber = require('gulp-plumber');
+var gulpLess = require('gulp-less');
+var gulpAutoprefixer = require('gulp-autoprefixer');
 
 // display all possible tasks
 gulp.task('help', gulpTaskListing);
@@ -40,19 +44,15 @@ gulp.task('clean', function(done) {
   helpers.log('Cleaning: ' + gulpUtil.colors.blue(delconfig));
   del(delconfig, done);
 });
-
 gulp.task('clean-fonts', function(done) {
   helpers.clean(config.build + 'fonts/**/*.*', done);
 });
-
 gulp.task('clean-images', function(done) {
   helpers.clean(config.build + 'images/**/*.*', done);
 });
-
 gulp.task('clean-styles', function(done) {
   helpers.clean(config.temp + '**/*.css', done);
 });
-
 gulp.task('clean-code', function(done) {
   var files = [].concat(
     config.temp + '**/*.js',
@@ -60,4 +60,36 @@ gulp.task('clean-code', function(done) {
     config.build + 'js/**/*.js'
   );
   helpers.clean(files, done);
+});
+
+// copying fonts to build directory
+gulp.task('fonts', ['clean-fonts'], function() {
+  helpers.log('Copying fonts');
+  return gulp
+    .src(config.fonts)
+    .pipe(gulp.dest(config.build + 'fonts'));
+});
+
+// copying images to build directory
+gulp.task('images', ['clean-images'], function() {
+  helpers.log('Copying and compressing the images');
+  return gulp
+    .src(config.images)
+    .pipe(gulpImagemin({
+      optimizationLevel: 4
+    }))
+    .pipe(gulp.dest(config.build + 'images'));
+});
+
+// creating the css files of the client
+gulp.task('styles', ['clean-styles'], function() {
+  helpers.log('Compiling Less --> CSS');
+  return gulp
+    .src(config.less)
+    .pipe(gulpPlumber())
+    .pipe(gulpLess())
+    .pipe(gulpAutoprefixer({
+      browsers: ['last 2 version', '> 5%']
+    }))
+    .pipe(gulp.dest(config.temp));
 });
