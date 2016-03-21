@@ -1,10 +1,11 @@
 module.exports = function() {
   var config = {
     alljs: [
-      './src/**.js',
+      './src/**/**.js',
       './config/**.js'
     ],
-    build: './build/'
+    build: './build/',
+    temp:'./temp/'
   };
 
   return config;
