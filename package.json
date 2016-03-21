@@ -1,11 +1,17 @@
 {
   "name": "chaos",
   "version": "1.0.0",
-  "description": "",
+  "description": "template for projects",
   "main": "index.js",
+  "repository": "https://github.com/ktsopanakis/chaos.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.5.2",
+    "express": "^4.13.4",
+    "lodash": "^4.6.1"
+  }
 }

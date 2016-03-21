@@ -1,6 +1,6 @@
 {
   "name": "chaos",
-  "description": "",
+  "description": "template for generator for most projects",
   "main": "index.js",
   "authors": [
     "Kostas Tsopanakis <k.tsopanakis@dotbydot.gr>"
@@ -14,5 +14,11 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "lodash": "~4.6.1",
+    "angular": "^1.5.2",
+    "jquery": "^2.2.2",
+    "bootstrap": "^3.3.6"
+  }
 }
