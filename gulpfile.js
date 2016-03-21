@@ -40,15 +40,19 @@ gulp.task('clean', function(done) {
   helpers.log('Cleaning: ' + gulpUtil.colors.blue(delconfig));
   del(delconfig, done);
 });
+
 gulp.task('clean-fonts', function(done) {
   helpers.clean(config.build + 'fonts/**/*.*', done);
 });
+
 gulp.task('clean-images', function(done) {
   helpers.clean(config.build + 'images/**/*.*', done);
 });
+
 gulp.task('clean-styles', function(done) {
   helpers.clean(config.temp + '**/*.css', done);
 });
+
 gulp.task('clean-code', function(done) {
   var files = [].concat(
     config.temp + '**/*.js',
