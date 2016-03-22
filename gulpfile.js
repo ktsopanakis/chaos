@@ -186,3 +186,16 @@ gulp.task('optimize', ['inject', 'test'], function() {
     .pipe(gulpRev.manifest())
     .pipe(gulp.dest(config.build));
 });
+
+// building the full stack
+gulp.task('build', ['optimize', 'images', 'fonts'], function() {
+  helpers.log('Building everything');
+
+  var msg = {
+    title: 'gulp build',
+    subtitle: 'Deployed to the build folder',
+    message: 'Running `gulp serve-build`'
+  };
+  del(config.temp);
+  helpers.log(msg);
+});
