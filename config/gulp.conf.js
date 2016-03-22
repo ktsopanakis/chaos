@@ -1,6 +1,7 @@
 module.exports = function() {
   var temp = './.tmp/';
   var build = './.build/';
+  var client = './src/client/';
 
 
   var config = {
@@ -14,9 +15,9 @@ module.exports = function() {
       './bower_components/bootstrap/fonts/**/*.*',
       'fonts/**/*.*'
     ],
-    images: 'images/**/*.*',
+    images: client + 'images/**/*.*',
     css: temp + 'styles.css',
-    less: 'styles/styles.less',
+    less: client + 'styles/styles.less',
   };
 
   return config;

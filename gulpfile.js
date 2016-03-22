@@ -67,6 +67,7 @@ gulp.task('fonts', ['clean-fonts'], function() {
   helpers.log('Copying fonts');
   return gulp
     .src(config.fonts)
+    .pipe(gulpIf(args.verbose, gulpPrint()))
     .pipe(gulp.dest(config.build + 'fonts'));
 });
 
@@ -75,6 +76,7 @@ gulp.task('images', ['clean-images'], function() {
   helpers.log('Copying and compressing the images');
   return gulp
     .src(config.images)
+    .pipe(gulpIf(args.verbose, gulpPrint()))
     .pipe(gulpImagemin({
       optimizationLevel: 4
     }))
