@@ -1,12 +1,9 @@
 module.exports = function() {
-  var assets = './src/assets/';
   var temp = './.tmp/';
   var build = './.build/';
 
-  var backend = './src/clients/backend/';
 
   var config = {
-    backend : backend,
     alljs: [
       './src/**/**.js',
       './config/**.js'
@@ -15,9 +12,9 @@ module.exports = function() {
     temp: temp,
     fonts: [
       './bower_components/bootstrap/fonts/**/*.*',
-      assets + 'fonts/**/*.*'
+      'fonts/**/*.*'
     ],
-    images: assets + 'images/**/*.*',
+    images: 'images/**/*.*',
     css: temp + 'styles.css',
     less: 'styles/styles.less',
   };

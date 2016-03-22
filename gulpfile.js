@@ -86,19 +86,6 @@ gulp.task('styles', ['clean-styles'], function() {
   helpers.log('Compiling Less --> CSS');
   return gulp
     .src(config.less)
-    .pipe(gulpPlumber())
-    .pipe(gulpLess())
-    .pipe(gulpAutoprefixer({
-      browsers: ['last 2 version', '> 5%']
-    }))
-    .pipe(gulp.dest(config.temp));
-});
-
-
-gulp.task('styles', ['clean-styles'], function() {
-  helpers.log('Compiling Less --> CSS');
-  return gulp
-    .src('assets/' + config.less)
     .pipe(gulpIf(args.verbose, gulpPrint()))
     .pipe(gulpPlumber())
     .pipe(gulpLess())
@@ -106,17 +93,4 @@ gulp.task('styles', ['clean-styles'], function() {
       browsers: ['last 2 version', '> 5%']
     }))
     .pipe(gulp.dest(config.temp));
-});
-
-gulp.task('styles-backend', ['clean-styles'], function() {
-  helpers.log('Compiling Less --> CSS');
-  return gulp
-    .src(config.backend  + config.less)
-    .pipe(gulpIf(args.verbose, gulpPrint()))
-    .pipe(gulpPlumber())
-    .pipe(gulpLess())
-    .pipe(gulpAutoprefixer({
-      browsers: ['last 2 version', '> 5%']
-    }))
-    .pipe(gulp.dest(config.temp+'backend/'));
 });
