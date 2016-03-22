@@ -1,1 +1,7 @@
-console.log('test3');
+(function(ng) {
+  'use strict';
+
+  ng.module('app', [
+    'app.core'
+  ]);
+}(angular));
