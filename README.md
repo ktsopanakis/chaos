@@ -10,6 +10,11 @@ is an example
 
 Also the project at the moment has no use for vagrant
 
+only one client can be active at one time, but multiple clients can be created
+the bower references for the client though are isngular
+the way to creat a second client is create a subcategory at the smae leve with client and name it anyhow
+then update the gulp file with the client and the app.js serving the new client
+
 ## preparing development environment
 
 1. Install virtual box (https://www.virtualbox.org/). This is needed in order for vagrant to run correctly
