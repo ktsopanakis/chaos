@@ -39,27 +39,20 @@ module.exports = function() {
 
     if (isDev) {
 
-      /*gulp.watch([config.less, config.js, config.html], [
-          'styles',
-          'templatecache',
-          browserSync.reload
-        ])
-        .on('change', function(event) {
-          console.log('asdasdasd');
-          changeEvent(event);
-        });*/
       gulp.watch([config.js, config.less, config.html], [
           'styles',
           'templatecache',
           browserSync.reload
         ])
         .on('change', function(event) {
-          console.log('asdasdasd');
-
+          changeEvent(event);
         });
 
     } else {
-      gulp.watch([config.less, config.js, config.html], ['optimize', browserSync.reload])
+      gulp.watch([config.js, config.less, config.html], [
+          'optimize',
+          browserSync.reload
+        ])
         .on('change', function(event) {
           changeEvent(event);
         });
@@ -67,12 +60,12 @@ module.exports = function() {
 
     var options = {
       proxy: 'localhost:' + serverConfig.serverPort,
-      port: 3000,
-      files: isDev ? [
+      port: 4000,
+      files: [
         config.client + '**/*.*',
         '!' + config.less,
         config.temp + '**/*.css'
-      ] : [],
+      ],
       ghostMode: {
         clicks: true,
         location: false,
