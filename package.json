@@ -2,7 +2,7 @@
   "name": "chaos",
   "version": "1.0.0",
   "description": "template for projects",
-  "main": "index.js",
+  "main": "src/server/chaos.js",
   "repository": "https://github.com/ktsopanakis/chaos.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

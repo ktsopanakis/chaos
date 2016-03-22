@@ -30,6 +30,7 @@ module.exports = function() {
       client + '**/*.js',
       '!' + client + '**/*.spec.js'
     ],
+    html: clientApp + '**/*.html',
     /**
      * optimized files
      */

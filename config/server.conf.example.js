@@ -6,7 +6,7 @@ config.dev = {
   //environment
   env: 'dev',
   //web server settigns
-  serverPort: process.env.port || 1337,
+  serverPort: 1337,
   // other settings
   other: {}
 };

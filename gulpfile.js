@@ -146,18 +146,27 @@ gulp.task('inject', ['wiredep', 'styles', 'templatecache'], function() {
 });
 
 gulp.task('test', ['vet', 'templatecache'], function(done) {
-//  startTests(true /* singleRun */ , done);
+  done();
+  //  startTests(true /* singleRun */ , done);
 });
 
 gulp.task('optimize', ['inject', 'test'], function() {
   helpers.log('Optimizing the javascript, css, html');
-  var assets = gulpUseref.assets({
-    searchPath: './'
+  var cssFilter = gulpFilter('**/*.css', {
+    restore: true
+  });
+  var jsLibFilter = gulpFilter('**/' + config.optimized.lib, {
+    restore: true
+  });
+  var jsAppFilter = gulpFilter('**/' + config.optimized.app, {
+    restore: true
+  });
+
+  var indexHtmlFilter = gulpFilter(['**/*', '!**/index.html'], {
+    restore: true
   });
   var templateCache = config.temp + config.templateCache.file;
-  var cssFilter = gulpFilter('**/*.css');
-  var jsLibFilter = gulpFilter('**/' + config.optimized.lib);
-  var jsAppFilter = gulpFilter('**/' + config.optimized.app);
+
   return gulp
     .src(config.index)
     .pipe(gulpPlumber())
@@ -167,30 +176,32 @@ gulp.task('optimize', ['inject', 'test'], function() {
       }), {
         starttag: '<!-- inject:templates:js -->'
       }))
-    .pipe(assets)
+    .pipe(gulpUseref({
+      searchPath: './'
+    }))
     .pipe(cssFilter)
     .pipe(gulpCsso())
-    .pipe(cssFilter.restore())
+    .pipe(cssFilter.restore)
     .pipe(jsLibFilter)
     .pipe(gulpUglify())
-    .pipe(jsLibFilter.restore())
+    .pipe(jsLibFilter.restore)
     .pipe(jsAppFilter)
     .pipe(gulpNgAnnotate())
     .pipe(gulpUglify())
-    .pipe(jsAppFilter.restore())
-    .pipe(gulpRev())
-    .pipe(assets.restore())
-    .pipe(gulpUseref())
+    .pipe(jsAppFilter.restore)
+    .pipe(indexHtmlFilter)
+    .pipe(gulpRev()) // Rename the concatenated files (but not index.html)
+    .pipe(indexHtmlFilter.restore)
     .pipe(gulpRevReplace())
     .pipe(gulp.dest(config.build))
     .pipe(gulpRev.manifest())
     .pipe(gulp.dest(config.build));
 });
 
+
 // building the full stack
 gulp.task('build', ['optimize', 'images', 'fonts'], function() {
   helpers.log('Building everything');
-
   var msg = {
     title: 'gulp build',
     subtitle: 'Deployed to the build folder',
@@ -198,4 +209,13 @@ gulp.task('build', ['optimize', 'images', 'fonts'], function() {
   };
   del(config.temp);
   helpers.log(msg);
+});
+
+
+gulp.task('serve-build', ['build'], function() {
+  helpers.serve(false /* isDev */ );
+});
+
+gulp.task('serve-dev', ['inject'], function() {
+  helpers.serve(true /* isDev */ );
 });
