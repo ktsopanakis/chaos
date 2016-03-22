@@ -3,7 +3,10 @@ module.exports = function() {
   var temp = './.tmp/';
   var build = './.build/';
 
+  var backend = './src/clients/backend/';
+
   var config = {
+    backend : backend,
     alljs: [
       './src/**/**.js',
       './config/**.js'
@@ -16,7 +19,7 @@ module.exports = function() {
     ],
     images: assets + 'images/**/*.*',
     css: temp + 'styles.css',
-    less: assets + 'styles/styles.less',
+    less: 'styles/styles.less',
   };
 
   return config;
