@@ -61,11 +61,11 @@ module.exports = function() {
     var options = {
       proxy: 'localhost:' + serverConfig.serverPort,
       port: 4000,
-      files: [
+      files: isDev ? [
         config.client + '**/*.*',
         '!' + config.less,
         config.temp + '**/*.css'
-      ],
+      ] : [],
       ghostMode: {
         clicks: true,
         location: false,

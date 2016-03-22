@@ -180,6 +180,7 @@ gulp.task('optimize', ['inject', 'test'], function() {
       searchPath: './'
     }))
     .pipe(cssFilter)
+    .pipe(gulpIf(args.verbose, gulpPrint()))
     .pipe(gulpCsso())
     .pipe(cssFilter.restore)
     .pipe(jsLibFilter)
@@ -198,7 +199,8 @@ gulp.task('optimize', ['inject', 'test'], function() {
     .pipe(gulp.dest(config.build));
 });
 
-
+// TODO: automated restarrting this, creates multiple app.css files
+// TODO: sometimes it doesnt even allow restarting the server
 // building the full stack
 gulp.task('build', ['optimize', 'images', 'fonts'], function() {
   helpers.log('Building everything');
