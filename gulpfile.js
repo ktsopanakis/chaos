@@ -221,3 +221,5 @@ gulp.task('serve-build', ['build'], function() {
 gulp.task('serve-dev', ['inject'], function() {
   helpers.serve(true /* isDev */ );
 });
+
+//TODO: screenfull dos not have main in bower, this has to be added:  "main":"dist/screenfull.js"

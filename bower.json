@@ -28,6 +28,7 @@
     "angular-touch": "^1.5.2",
     "angular-ui-router": "ui-router#^0.2.18",
     "angular-messages": "^1.5.2",
-    "angular-route": "^1.5.2"
+    "angular-route": "^1.5.2",
+    "screenfull": "^3.0.0"
   }
 }
