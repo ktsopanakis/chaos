@@ -29,12 +29,34 @@
 
   <body>
 
-    <div ng-include="'app/core/layout/navbar.html'"></div>
+    <nav-header-directive></nav-header-directive>
 
     <div class="container-fluid">
-      <h3>
-        test here
-      </h3>
+      <div class="row">
+        <div ng-if="global.sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active">
+              <a href="#">Overview
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">Reports</a>
+            </li>
+            <li>
+              <a href="#">Analytics</a>
+            </li>
+            <li>
+              <a href="#">Export</a>
+            </li>
+          </ul>
+        </div>
+        <div ng-class="{'col-sm-12':!global.sidebar,'col-sm-9':global.sidebar, 'col-sm-offset-3':global.sidebar, 'col-md-10':global.sidebar, 'col-md-offset-2':global.sidebar, main:true}">
+          asd {{global.fullScreen}}
+        </div>
+      </div>
+
+      <div ui-view></div>
     </div>
 
     <div ng-include="'app/core/layout/footer.html'"></div>
@@ -75,6 +97,9 @@
     <!-- inject:js -->
     <script src="/src/client/app/app.module.js"></script>
     <script src="/src/client/app/core/core.module.js"></script>
+    <script src="/src/client/app/core/controllers/navHeaderController.js"></script>
+    <script src="/src/client/app/core/directives/navHeaderDirective.js"></script>
+    <script src="/src/client/app/core/services/navigationService.js"></script>
     <!-- endinject -->
 
     <!-- inject:templates:js -->
