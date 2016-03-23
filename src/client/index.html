@@ -12,11 +12,11 @@
 
     <!-- build:css styles/lib.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
-    <link rel="stylesheet" href="/bower_components/datatables.net-bs/css/dataTables.bootstrap.css" />
-    <link rel="stylesheet" href="/bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.css" />
-    <link rel="stylesheet" href="/bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="/bower_components/datatables.net-bs/css/dataTables.bootstrap.css"/>
+    <link rel="stylesheet" href="/bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.css"/>
+    <link rel="stylesheet" href="/bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.css"/>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -32,7 +32,7 @@
     <nav-header-directive></nav-header-directive>
 
     <div class="container-fluid">
-      <div class="row">
+      <div class="row row-offcanvas row-offcanvas-right">
         <div ng-if="global.sidebar" class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active">
@@ -51,19 +51,35 @@
             </li>
           </ul>
         </div>
-        <div ng-class="{'col-sm-12':!global.sidebar,
-                        'col-md-12':!global.sidebar,
-                        'col-sm-9':global.sidebar,
-                        'col-sm-offset-3':global.sidebar,
-                        'col-md-10':global.sidebar,
-                        'col-md-offset-2':global.sidebar, main:true}">
+        <div class="main" ng-class="{
+          'col-sm-12':!global.sidebar&&!global.quickActions,
+          'col-md-12':!global.sidebar&&!global.quickActions,
+          'col-sm-9':global.sidebar&&!global.quickActions,
+          'col-md-10':global.sidebar&&!global.quickActions,
+          'col-sm-9':!global.sidebar&&global.quickActions,
+          'col-md-9':!global.sidebar&&global.quickActions,
+          'col-sm-6':global.sidebar&&global.quickActions,
+          'col-md-7':global.sidebar&&global.quickActions,
+          'col-sm-offset-3':global.sidebar,
+          'col-md-offset-2':global.sidebar}">
+          <p  ng-click="global.quickActions=true" class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
           <div ui-view></div>
         </div>
-      </div>
+        <div ng-if="global.quickActions" class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+            <a href="#" class="list-group-item active">Link</a>
+            <a href="#" class="list-group-item">Link</a>
 
+          </div>
+        </div>
+      </div>
     </div>
 
     <div ng-include="'app/core/layout/footer.html'"></div>
+
+
 
     <!-- build:js js/lib.js -->
     <!-- bower:js -->
@@ -112,6 +128,15 @@
     <!-- endinject -->
 
     <!-- endbuild -->
+
+    <script >
+      $(document).ready(function () {
+      $('[data-toggle="offcanvas"]').click(function () {
+        $('.row-offcanvas').toggleClass('active')
+      });
+    });
+    </script>
+
   </body>
 
 </html>
