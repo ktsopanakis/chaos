@@ -12,11 +12,11 @@
 
     <!-- build:css styles/lib.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
-    <link rel="stylesheet" href="/bower_components/datatables.net-bs/css/dataTables.bootstrap.css"/>
-    <link rel="stylesheet" href="/bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.css"/>
-    <link rel="stylesheet" href="/bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.css"/>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="/bower_components/datatables.net-bs/css/dataTables.bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -27,7 +27,7 @@
     <!-- endbuild -->
   </head>
 
-  <body>
+  <body ng-controller="appController">
 
     <nav-header-directive></nav-header-directive>
 
@@ -51,12 +51,16 @@
             </li>
           </ul>
         </div>
-        <div ng-class="{'col-sm-12':!global.sidebar,'col-sm-9':global.sidebar, 'col-sm-offset-3':global.sidebar, 'col-md-10':global.sidebar, 'col-md-offset-2':global.sidebar, main:true}">
-          asd {{global.fullScreen}}
+        <div ng-class="{'col-sm-12':!global.sidebar,
+                        'col-md-12':!global.sidebar,
+                        'col-sm-9':global.sidebar,
+                        'col-sm-offset-3':global.sidebar,
+                        'col-md-10':global.sidebar,
+                        'col-md-offset-2':global.sidebar, main:true}">
+          <div ui-view></div>
         </div>
       </div>
 
-      <div ui-view></div>
     </div>
 
     <div ng-include="'app/core/layout/footer.html'"></div>
@@ -97,6 +101,7 @@
     <!-- inject:js -->
     <script src="/src/client/app/app.module.js"></script>
     <script src="/src/client/app/core/core.module.js"></script>
+    <script src="/src/client/app/core/controllers/appController.js"></script>
     <script src="/src/client/app/core/controllers/navHeaderController.js"></script>
     <script src="/src/client/app/core/directives/navHeaderDirective.js"></script>
     <script src="/src/client/app/core/services/navigationService.js"></script>

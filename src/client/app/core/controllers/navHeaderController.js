@@ -31,7 +31,7 @@
       }
     };
 
-    $rootScope.sidebar = false;
+    $rootScope.sidebar = true;
     $scope.toggleSidebar = function() {
       if ($rootScope.sidebar) {
         $rootScope.sidebar = false;
