@@ -14,7 +14,8 @@
       'ngTouch',
       /* 3rd-party modules */
       'ui.router',
-      'LocalStorageModule'
+      'LocalStorageModule',
+      'anim-in-out'
     ]);
 
 })(angular);
