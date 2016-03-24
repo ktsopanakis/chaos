@@ -8,6 +8,11 @@ gulp vet --verbose
 ```
 is an example
 
+in roder to get the root scope from the console
+//$rootScope = angular.element(document).scope()
+
+in chrome black boxing in order for $log to work nicely
+
 Also the project at the moment has no use for vagrant
 
 only one client can be active at one time, but multiple clients can be created

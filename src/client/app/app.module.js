@@ -41,6 +41,3 @@
     }
   ]);
 }(angular));
-
-
-//$rootScope = angular.element(document).scope()
