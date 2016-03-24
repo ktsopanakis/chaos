@@ -46,6 +46,7 @@
     }
 
     $rootScope.toggleSidebar = function() {
+      $log.debug('toggleSidebar');
       if ($rootScope.sidebar) {
         $rootScope.sidebar = false;
         localStorageService.set('sidebar', false);
@@ -64,6 +65,7 @@
     }
 
     $rootScope.toggleQuickActions = function() {
+      $log.debug('toggleQuickActions');      
       if ($rootScope.quickActions) {
         $rootScope.quickActions = false;
         localStorageService.set('quickActions', false);
