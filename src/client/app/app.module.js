@@ -9,6 +9,11 @@
 
 
   ng.module('app')
+
+    .config(['$logProvider', function($logProvider) {
+      $logProvider.debugEnabled(true);
+    }])
+
   .config([
     '$stateProvider',
     '$urlRouterProvider',
@@ -17,7 +22,7 @@
       $stateProvider
         .state('home', {
           data: {
-            displayName:'Home',
+            displayName: 'Home',
             subTitle: 'Home',
             requireGuest: false,
             icon: 'glyphicon-road'

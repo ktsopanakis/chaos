@@ -4,13 +4,15 @@
   ng.module('app.core')
     .controller('quickActionsController', quickActionsController);
 
-  quickActionsController.$inject = ['$rootScope',
-    '$scope'
+  quickActionsController.$inject = [
+    '$rootScope',
+    '$scope',
+    '$log'
   ];
 
-  function quickActionsController($rootScope, $scope) {
+  function quickActionsController($rootScope, $scope, $log) {
     $scope.__name = 'quickActionsController';
-    console.log($scope.__name+$scope.$id);
+    $log.debug($scope.__name+' has id '+$scope.$id);
   }
 
 })(angular);

@@ -2,17 +2,18 @@
 (function() {
   'use strict';
 
-  angular.module('app.core')
+  angular.module('app')
     .controller('homeController', homeController);
 
   homeController.$inject = [
     '$state',
     '$scope',
-    '$rootScope'
+    '$rootScope',
+    '$log'
   ];
 
-  function homeController($state, $scope, $rootScope) {
+  function homeController($state, $scope, $rootScope,$log) {
     $scope.__name = 'homeController';
-    console.log($scope.__name+$scope.$id);
+    $log.debug($scope.__name+' has id '+$scope.$id);
   }
 })();

@@ -3,9 +3,13 @@
 
   ng.module('examples').controller('examplesController',
     examplesController);
-  examplesController.$inject = ['$scope'];
+  examplesController.$inject = [
+    '$scope',
+    '$log'
+  ];
 
-  function examplesController($scope) {
-    console.log('heree2');
+  function examplesController($scope, $log) {
+    $scope.__name = 'dashboardController';
+    $log.debug($scope.__name + ' has id ' + $scope.$id);
   }
 })(angular);

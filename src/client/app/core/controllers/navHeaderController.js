@@ -4,13 +4,15 @@
   ng.module('app.core')
     .controller('navHeaderController', navHeaderController);
 
-  navHeaderController.$inject = ['$rootScope',
-    '$scope'
+  navHeaderController.$inject = [
+    '$rootScope',
+    '$scope',
+    '$log'
   ];
 
-  function navHeaderController($rootScope, $scope) {
+  function navHeaderController($rootScope, $scope,$log) {
     $scope.__name = 'navHeaderController';
-    console.log($scope.__name+$scope.$id);
+    $log.debug($scope.__name+' has id '+$scope.$id);
   }
 
 })(angular);

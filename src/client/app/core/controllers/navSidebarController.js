@@ -4,13 +4,15 @@
   ng.module('app.core')
     .controller('navSidebarController', navSidebarController);
 
-  navSidebarController.$inject = ['$rootScope',
-    '$scope'
+  navSidebarController.$inject = [
+    '$rootScope',
+    '$scope',
+    '$log'
   ];
 
-  function navSidebarController($rootScope, $scope) {
+  function navSidebarController($rootScope, $scope,$log) {
     $scope.__name = 'navSidebarController';
-    console.log($scope.__name+$scope.$id);
+    $log.debug($scope.__name+' has id '+$scope.$id);
   }
 
 })(angular);

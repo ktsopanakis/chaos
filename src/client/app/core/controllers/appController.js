@@ -8,12 +8,13 @@
   appController.$inject = [
     '$state',
     '$scope',
-    '$rootScope'
+    '$rootScope',
+    '$log'
   ];
 
-  function appController($state, $scope, $rootScope) {
+  function appController($state, $scope, $rootScope,$log) {
     $scope.__name = 'appController';
-    console.log($scope.__name+$scope.$id);
+    $log.debug($scope.__name+' has id '+$scope.$id);
 
     //TODO: toggled values shoudl persist refreshes, store info locally
 

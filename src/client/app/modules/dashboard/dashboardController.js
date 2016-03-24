@@ -3,10 +3,10 @@
 
   ng.module('dashboard').controller('dashboardController',
     dashboardController);
-  dashboardController.$inject = ['$scope'];
+  dashboardController.$inject = ['$scope','$log'];
 
-  function dashboardController($scope) {
+  function dashboardController($scope,$log) {
     $scope.__name = 'dashboardController';
-    console.log($scope.__name+$scope.$id);
+    $log.debug($scope.__name+' has id '+$scope.$id);
   }
 })(angular);
