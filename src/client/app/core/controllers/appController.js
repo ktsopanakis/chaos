@@ -12,7 +12,6 @@
   ];
 
   function appController($state, $scope, $rootScope) {
-    $scope.global = $rootScope;
     $scope.__name = 'appController';
     console.log($scope.__name+$scope.$id);
 

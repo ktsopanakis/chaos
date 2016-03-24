@@ -54,14 +54,14 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right hidden-xs">
-        <li ng-class="{active:global.fullScreen}">
-          <a ng-click="global.toggleFullScreen()" href='#'>Fullscreen</a>
+        <li ng-class="{active:$root.fullScreen}">
+          <a ng-click="$root.toggleFullScreen()" href='#'>Fullscreen</a>
         </li>
-        <li ng-class="{active:global.quickActions}">
-          <a ng-click="global.toggleQuickActions()" href='#'>Quick actions</a>
+        <li ng-class="{active:$root.quickActions}">
+          <a ng-click="$root.toggleQuickActions()" href='#'>Quick actions</a>
         </li>
-        <li ng-class="{active:global.sidebar}">
-          <a ng-click="global.toggleSidebar()" href='#'>Sidebar</a>
+        <li ng-class="{active:$root.sidebar}">
+          <a ng-click="$root.toggleSidebar()" href='#'>Sidebar</a>
         </li>
       </ul>
 

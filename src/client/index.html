@@ -33,25 +33,25 @@
     <div class="container-fluid">
       <div class="row row-offcanvas row-offcanvas-right">
 
-        <nav-sidebar-directive ng-if="global.sidebar"></nav-sidebar-directive>
+        <nav-sidebar-directive ng-if="$root.sidebar"></nav-sidebar-directive>
 
         <div class="main" ng-class="{
-          'col-sm-12':!global.sidebar&&!global.quickActions,
-          'col-md-12':!global.sidebar&&!global.quickActions,
-          'col-sm-9':global.sidebar&&!global.quickActions,
-          'col-md-10':global.sidebar&&!global.quickActions,
-          'col-sm-9':!global.sidebar&&global.quickActions,
-          'col-md-9':!global.sidebar&&global.quickActions,
-          'col-sm-6':global.sidebar&&global.quickActions,
-          'col-md-7':global.sidebar&&global.quickActions,
-          'col-sm-offset-3':global.sidebar,
-          'col-md-offset-2':global.sidebar}">
+          'col-sm-12':!$root.sidebar&&!$root.quickActions,
+          'col-md-12':!$root.sidebar&&!$root.quickActions,
+          'col-sm-9':$root.sidebar&&!$root.quickActions,
+          'col-md-10':$root.sidebar&&!$root.quickActions,
+          'col-sm-9':!$root.sidebar&&$root.quickActions,
+          'col-md-9':!$root.sidebar&&$root.quickActions,
+          'col-sm-6':$root.sidebar&&$root.quickActions,
+          'col-md-7':$root.sidebar&&$root.quickActions,
+          'col-sm-offset-3':$root.sidebar,
+          'col-md-offset-2':$root.sidebar}">
 
           <div ui-view></div>
 
         </div>
 
-        <quick-actions-directive ng-if="global.quickActions"></quick-actions-directive>
+        <quick-actions-directive ng-if="$root.quickActions"></quick-actions-directive>
 
       </div>
     </div>

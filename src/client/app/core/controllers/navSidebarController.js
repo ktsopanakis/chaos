@@ -9,7 +9,6 @@
   ];
 
   function navSidebarController($rootScope, $scope) {
-    $scope.global = $rootScope;
     $scope.__name = 'navSidebarController';
     console.log($scope.__name+$scope.$id);
   }

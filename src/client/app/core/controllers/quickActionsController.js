@@ -9,7 +9,6 @@
   ];
 
   function quickActionsController($rootScope, $scope) {
-    $scope.global = $rootScope;
     $scope.__name = 'quickActionsController';
     console.log($scope.__name+$scope.$id);
   }
