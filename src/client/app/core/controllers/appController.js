@@ -14,6 +14,8 @@
   function appController($state, $scope, $rootScope) {
     $scope.global = $rootScope;
 
+    //TODO: toggled values shoudl persist refreshes, store info locally
+
     //TODO: the listener does not handle F11
     $rootScope.fullScreen = false;
     if (screenfull.enabled) {
