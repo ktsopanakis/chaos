@@ -10,7 +10,7 @@ module.exports = function() {
      * browser sync
      */
     browserReloadDelay: 1000,
-    
+
     alljs: [
       './src/**/**.js',
       './config/**.js'

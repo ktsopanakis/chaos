@@ -4,13 +4,12 @@
   ng.module('app.core')
     .controller('navHeaderController', navHeaderController);
 
-  navHeaderController.$inject = [
-    '$rootScope',
+  navHeaderController.$inject = ['$rootScope',
     '$scope'
   ];
 
   function navHeaderController($rootScope, $scope) {
-    
+
     $scope.global = $rootScope;
   }
 

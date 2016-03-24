@@ -13,6 +13,8 @@
 
   function appController($state, $scope, $rootScope) {
     $scope.global = $rootScope;
+
+    //TODO: the listener does not handle F11
     $rootScope.fullScreen = false;
     if (screenfull.enabled) {
       document.addEventListener(screenfull.raw.fullscreenchange, function() {

@@ -33,24 +33,9 @@
 
     <div class="container-fluid">
       <div class="row row-offcanvas row-offcanvas-right">
-        <div ng-if="global.sidebar" class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active">
-              <a href="#">Overview
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">Reports</a>
-            </li>
-            <li>
-              <a href="#">Analytics</a>
-            </li>
-            <li>
-              <a href="#">Export</a>
-            </li>
-          </ul>
-        </div>
+
+        <nav-sidebar-directive ng-if="global.sidebar"></nav-sidebar-directive>
+
         <div class="main" ng-class="{
           'col-sm-12':!global.sidebar&&!global.quickActions,
           'col-md-12':!global.sidebar&&!global.quickActions,
@@ -62,24 +47,17 @@
           'col-md-7':global.sidebar&&global.quickActions,
           'col-sm-offset-3':global.sidebar,
           'col-md-offset-2':global.sidebar}">
-          <p  ng-click="global.quickActions=true" class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div ui-view></div>
-        </div>
-        <div ng-if="global.quickActions" class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Link</a>
-            <a href="#" class="list-group-item">Link</a>
 
-          </div>
+          <div ui-view></div>
+
         </div>
+
+        <quick-actions-directive ng-if="global.quickActions"></quick-actions-directive>
+
       </div>
     </div>
 
     <div ng-include="'app/core/layout/footer.html'"></div>
-
-
 
     <!-- build:js js/lib.js -->
     <!-- bower:js -->
@@ -119,7 +97,11 @@
     <script src="/src/client/app/core/core.module.js"></script>
     <script src="/src/client/app/core/controllers/appController.js"></script>
     <script src="/src/client/app/core/controllers/navHeaderController.js"></script>
+    <script src="/src/client/app/core/controllers/navSidebarController.js"></script>
+    <script src="/src/client/app/core/controllers/quickActionsController.js"></script>
     <script src="/src/client/app/core/directives/navHeaderDirective.js"></script>
+    <script src="/src/client/app/core/directives/navSidebarDirective.js"></script>
+    <script src="/src/client/app/core/directives/quickActionsDirective.js"></script>
     <script src="/src/client/app/core/services/navigationService.js"></script>
     <!-- endinject -->
 
@@ -130,11 +112,11 @@
     <!-- endbuild -->
 
     <script >
-      $(document).ready(function () {
-      $('[data-toggle="offcanvas"]').click(function () {
-        $('.row-offcanvas').toggleClass('active')
+      $(document).ready(function() {
+        $('[data-toggle="offcanvas"]').click(function() {
+          $('.row-offcanvas').toggleClass('active')
+        });
       });
-    });
     </script>
 
   </body>
