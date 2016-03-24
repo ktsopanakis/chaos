@@ -9,14 +9,13 @@
     '$state',
     '$scope',
     '$rootScope',
-    '$log'
+    '$log',
+    'localStorageService'
   ];
 
-  function appController($state, $scope, $rootScope,$log) {
+  function appController($state, $scope, $rootScope, $log, localStorageService) {
     $scope.__name = 'appController';
-    $log.debug($scope.__name+' has id '+$scope.$id);
-
-    //TODO: toggled values shoudl persist refreshes, store info locally
+    $log.debug($scope.__name + ' has id ' + $scope.$id);
 
     //TODO: the listener does not handle F11
     $rootScope.fullScreen = false;
@@ -37,21 +36,40 @@
       }
     };
 
-    $rootScope.sidebar = true;
+
+
+    if (localStorageService.get('sidebar') !== null) {
+      $rootScope.sidebar = localStorageService.get('sidebar');
+    } else {
+      $rootScope.sidebar = true;
+      localStorageService.set('sidebar', true);
+    }
+
     $rootScope.toggleSidebar = function() {
       if ($rootScope.sidebar) {
         $rootScope.sidebar = false;
+        localStorageService.set('sidebar', false);
       } else {
         $rootScope.sidebar = true;
+        localStorageService.set('sidebar', true);
       }
     };
 
-    $rootScope.quickActions = false;
+
+    if (localStorageService.get('quickActions') !== null) {
+      $rootScope.quickActions = localStorageService.get('quickActions');
+    } else {
+      $rootScope.quickActions = false;
+      localStorageService.set('quickActions', false);
+    }
+
     $rootScope.toggleQuickActions = function() {
       if ($rootScope.quickActions) {
         $rootScope.quickActions = false;
+        localStorageService.set('quickActions', false);
       } else {
         $rootScope.quickActions = true;
+        localStorageService.set('quickActions', true);
       }
     };
 

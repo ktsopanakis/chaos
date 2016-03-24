@@ -38,6 +38,7 @@
     "datatables.net-responsive-bs": "^2.0.2",
     "Chart.js": "chartjs#^1.0.2",
     "three.js": "threejs#*",
-    "gridster": "^0.5.6"
+    "gridster": "^0.5.6",
+    "angular-local-storage": "^0.2.7"
   }
 }

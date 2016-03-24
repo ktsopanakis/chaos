@@ -13,7 +13,8 @@
       'ngMessages',
       'ngTouch',
       /* 3rd-party modules */
-      'ui.router'
+      'ui.router',
+      'LocalStorageModule'
     ]);
 
 })(angular);

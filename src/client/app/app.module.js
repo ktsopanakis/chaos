@@ -10,9 +10,16 @@
 
   ng.module('app')
 
-    .config(['$logProvider', function($logProvider) {
-      $logProvider.debugEnabled(true);
-    }])
+  .config(['$logProvider', function($logProvider) {
+    $logProvider.debugEnabled(true);
+  }])
+
+  .config(['localStorageServiceProvider', function(localStorageServiceProvider) {
+    localStorageServiceProvider
+      .setPrefix('app')
+      .setStorageType('localStorage') //sessionStorage is the otrher option
+      .setNotify(true, true);
+  }])
 
   .config([
     '$stateProvider',
