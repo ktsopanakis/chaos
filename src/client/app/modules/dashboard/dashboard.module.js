@@ -13,7 +13,7 @@
         $stateProvider
           .state('dashboard', {
             data: {
-              displayName:'Exam',
+              displayName: 'Exam',
               subTitle: 'Home',
               requireGuest: false,
               icon: 'glyphicon-road'

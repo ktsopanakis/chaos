@@ -8,8 +8,7 @@
   ng.module('app')
     .config([
       '$stateProvider',
-      '$urlRouterProvider',
-      function($stateProvider, $urlRouterProvider) {
+      function($stateProvider) {
         $stateProvider
           .state('examples', {
             data: {

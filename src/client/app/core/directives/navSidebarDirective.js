@@ -8,8 +8,7 @@
       restrict: 'E',
       controller: 'navSidebarController',
       replace: true,
-      templateUrl: 'app/core/layout/navSidebar.html',
-      scope: {}
+      templateUrl: 'app/core/layout/navSidebar.html'
     };
   }
 })(angular);

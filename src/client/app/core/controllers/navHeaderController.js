@@ -9,8 +9,9 @@
   ];
 
   function navHeaderController($rootScope, $scope) {
-
     $scope.global = $rootScope;
+    $scope.__name = 'navHeaderController';
+    console.log($scope.__name+$scope.$id);
   }
 
 })(angular);

@@ -6,6 +6,7 @@
   dashboardController.$inject = ['$scope'];
 
   function dashboardController($scope) {
-    console.log('heree');
+    $scope.__name = 'dashboardController';
+    console.log($scope.__name+$scope.$id);
   }
 })(angular);

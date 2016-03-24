@@ -13,6 +13,8 @@
 
   function appController($state, $scope, $rootScope) {
     $scope.global = $rootScope;
+    $scope.__name = 'appController';
+    console.log($scope.__name+$scope.$id);
 
     //TODO: toggled values shoudl persist refreshes, store info locally
 
