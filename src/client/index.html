@@ -29,7 +29,13 @@
   </head>
 
   <body ng-controller="appController">
-
+    <div style="background-color:#ece2e1; position: fixed; bottom: 0; left: 0; right: 0; top: 0;" ng-if=" false">
+      <p>
+        <h3 style="left: 0; line-height: 200px; margin-top: -100px; position: absolute; text-align: center; top: 50%; width: 100%;" >
+          Chaos loading
+        </h3>
+      </p>
+    </div>
     <nav-header-directive></nav-header-directive>
 
     <div class="container-fluid">
@@ -90,6 +96,10 @@
     <script src="/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <script src="/bower_components/angular-ui-router-anim-in-out/anim-in-out.js"></script>
     <script src="/bower_components/angular-translate/angular-translate.js"></script>
+    <script src="/bower_components/tv4/tv4.js"></script>
+    <script src="/bower_components/objectpath/lib/ObjectPath.js"></script>
+    <script src="/bower_components/angular-schema-form/dist/schema-form.js"></script>
+    <script src="/bower_components/angular-schema-form/dist/bootstrap-decorator.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

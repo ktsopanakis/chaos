@@ -23,6 +23,7 @@ in chrome black boxing in order for $log to work nicely
 //TODO: testing
 //TODO: manage authentication/authorization/permissions/login/logout
 //TODO: add directive for tables, and create ways of getting data from server
+//TODO: gridstack or gridster or somethign similar, that can save state on server, for better dashboards
 
 
 Also the project at the moment has no use for vagrant

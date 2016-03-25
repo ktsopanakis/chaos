@@ -16,6 +16,11 @@
       };
     }])
 
+  .config(['$resourceProvider', function($resourceProvider) {
+    // Don't strip trailing slashes from calculated URLs
+    $resourceProvider.defaults.stripTrailingSlashes = false;
+  }])
+
 
   //TODO: the translations should be stored inn seperate files
   .config(['$translateProvider', function($translateProvider) {
@@ -26,13 +31,13 @@
       SUBTITLE: 'Subtitle translated by angular trnaslate service',
       'GO TO DASHBOARD': 'Go to dashboard',
       'GO TO EXAMPLES': 'Go to example',
-      'OPTIONS':'Options',
-      FULLSCREEN:'Fullscreen',
-      SIDEBAR:'Sidebar',
-      'QUICK ACTIONS':'Quick Actions',
-      'SELECT LANGUAGE':'Select Language',
-      'SETTINGS':'Settings',
-      'BOOTSTRAP EXAMPLES':'Bootstrap Examples'
+      'OPTIONS': 'Options',
+      FULLSCREEN: 'Fullscreen',
+      SIDEBAR: 'Sidebar',
+      'QUICK ACTIONS': 'Quick Actions',
+      'SELECT LANGUAGE': 'Select Language',
+      'SETTINGS': 'Settings',
+      'BOOTSTRAP EXAMPLES': 'Bootstrap Examples'
     };
     var translationsGR = {
       HOME: 'Αρχική',
@@ -41,13 +46,13 @@
       SUBTITLE: 'Υποτιτλος μεταφραζμένος από το angular translate service',
       'GO TO DASHBOARD': 'Πήγαινε στη κονσόλα',
       'GO TO EXAMPLES': 'Πήγαινε σστα παραδείγματα',
-      'OPTIONS':'Επιλογές',
-      FULLSCREEN:'Πλήρης οθόνη',
-      SIDEBAR:'Αριστερή μπάρα',
-      'QUICK ACTIONS':'Γρήγορες ενέργειες',
-      'SELECT LANGUAGE':'Επιλογή Γλώσσας',
-      'SETTINGS':'Ρυθμίσεις',
-      'BOOTSTRAP EXAMPLES':'Παραδειγματα Bootstrap'
+      'OPTIONS': 'Επιλογές',
+      FULLSCREEN: 'Πλήρης οθόνη',
+      SIDEBAR: 'Αριστερή μπάρα',
+      'QUICK ACTIONS': 'Γρήγορες ενέργειες',
+      'SELECT LANGUAGE': 'Επιλογή Γλώσσας',
+      'SETTINGS': 'Ρυθμίσεις',
+      'BOOTSTRAP EXAMPLES': 'Παραδειγματα Bootstrap'
 
     };
     $translateProvider

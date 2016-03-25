@@ -17,6 +17,7 @@
       'LocalStorageModule',
       'anim-in-out',
       'pascalprecht.translate',
+      'schemaForm'
     ]);
 
 })(angular);
