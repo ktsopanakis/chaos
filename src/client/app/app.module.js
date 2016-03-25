@@ -11,13 +11,13 @@
   ng.module('app')
     .factory('appCustomHandlerFactory', ['$log', function($log) {
       return function(translationID, uses) {
-        $log.warn('[Missing ' + translationID + ']');
-        return '[?' + translationID + ']';
+        $log.warn('[Missing ' + translationID + ' for ' + uses + ']');
+        return '[' + uses + '?' + translationID + ']';
       };
     }])
 
 
-    //TODO: the translations should be stored inn seperate files
+  //TODO: the translations should be stored inn seperate files
   .config(['$translateProvider', function($translateProvider) {
     var translationsEN = {
       HOME: 'Home',
