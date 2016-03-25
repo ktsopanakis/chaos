@@ -15,4 +15,4 @@
     });
 })(angular);
 
-//TODO: make breadcrump service that works
+//TODO: make breadcrump service/directive that works
