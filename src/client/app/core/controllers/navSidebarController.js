@@ -10,9 +10,9 @@
     '$log'
   ];
 
-  function navSidebarController($rootScope, $scope,$log) {
+  function navSidebarController($rootScope, $scope, $log) {
     $scope.__name = 'navSidebarController';
-    $log.debug($scope.__name+' has id '+$scope.$id);
+    $log.debug($scope.__name + ' has id ' + $scope.$id);
   }
 
 })(angular);

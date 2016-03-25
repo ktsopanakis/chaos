@@ -9,7 +9,7 @@ module.exports = function() {
     /**
      * browser sync
      */
-    browserReloadDelay: 1000,
+    browserReloadDelay: 3000,
 
     alljs: [
       './src/**/**.js',

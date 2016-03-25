@@ -9,10 +9,10 @@
 
 
   ng.module('app')
-    .factory('appCustomHandlerFactory', ['$log',function($log) {
+    .factory('appCustomHandlerFactory', ['$log', function($log) {
       return function(translationID, uses) {
-        $log.error('[Missing ' + translationID+']');
-        return '[Missing ' + translationID+']' ;
+        $log.error('[Missing ' + translationID + ']');
+        return '[Missing ' + translationID + ']';
       };
     }])
 
@@ -20,14 +20,14 @@
     var translationsEN = {
       HOME: 'Home',
       DASHBOARD: 'Dashboard',
-      EXAMPLES:'Examples',
-      SUBTITLE:'Subtitle translated by angular trnaslate service'
+      EXAMPLES: 'Examples',
+      SUBTITLE: 'Subtitle translated by angular trnaslate service'
     };
     var translationsGR = {
       HOME: 'Αρχική',
       DASHBOARD: 'Κονσόλα',
-      EXAMPLES:'Παραδείγματα',
-      SUBTITLE:'Υποτιτλος μεταφραζμένος από το angular translate service'
+      EXAMPLES: 'Παραδείγματα',
+      SUBTITLE: 'Υποτιτλος μεταφραζμένος από το angular translate service'
     };
     $translateProvider
       .translations('en', translationsEN)

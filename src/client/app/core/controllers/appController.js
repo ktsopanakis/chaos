@@ -19,7 +19,8 @@
     $log.debug($scope.__name + ' has id ' + $scope.$id);
 
     $rootScope.changeLanguage = function(langKey) {
-      $log.debug('changing languade to '+langKey);
+      //TODO: language preference should be stored, and used in future also
+      $log.debug('changing languade to ' + langKey);
       $translate.use(langKey);
     };
 
