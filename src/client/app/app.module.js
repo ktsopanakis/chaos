@@ -9,6 +9,33 @@
 
 
   ng.module('app')
+    .factory('appCustomHandlerFactory', ['$log',function($log) {
+      return function(translationID, uses) {
+        $log.error('[Missing ' + translationID+']');
+        return '[Missing ' + translationID+']' ;
+      };
+    }])
+
+  .config(['$translateProvider', function($translateProvider) {
+    var translationsEN = {
+      HOME: 'Home',
+      DASHBOARD: 'Dashboard',
+      EXAMPLES:'Examples',
+      SUBTITLE:'Subtitle translated by angular trnaslate service'
+    };
+    var translationsGR = {
+      HOME: 'Αρχική',
+      DASHBOARD: 'Κονσόλα',
+      EXAMPLES:'Παραδείγματα',
+      SUBTITLE:'Υποτιτλος μεταφραζμένος από το angular translate service'
+    };
+    $translateProvider
+      .translations('en', translationsEN)
+      .translations('gr', translationsGR)
+      .preferredLanguage('en')
+      .useMissingTranslationHandler('appCustomHandlerFactory')
+      .useSanitizeValueStrategy('sanitizeParameters');
+  }])
 
   .config(['$logProvider', function($logProvider) {
     $logProvider.debugEnabled(true);

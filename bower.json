@@ -40,6 +40,7 @@
     "three.js": "threejs#*",
     "gridster": "^0.5.6",
     "angular-local-storage": "^0.2.7",
-    "angular-ui-router-anim-in-out": "^1.0.2"
+    "angular-ui-router-anim-in-out": "^1.0.2",
+    "angular-translate": "^2.11.0"
   }
 }

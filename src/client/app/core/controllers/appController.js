@@ -10,12 +10,18 @@
     '$scope',
     '$rootScope',
     '$log',
-    'localStorageService'
+    'localStorageService',
+    '$translate'
   ];
 
-  function appController($state, $scope, $rootScope, $log, localStorageService) {
+  function appController($state, $scope, $rootScope, $log, localStorageService, $translate) {
     $scope.__name = 'appController';
     $log.debug($scope.__name + ' has id ' + $scope.$id);
+
+    $rootScope.changeLanguage = function(langKey) {
+      $log.debug('changing languade to '+langKey);
+      $translate.use(langKey);
+    };
 
     //TODO: the listener does not handle F11
     $rootScope.fullScreen = false;
@@ -65,7 +71,7 @@
     }
 
     $rootScope.toggleQuickActions = function() {
-      $log.debug('toggleQuickActions');      
+      $log.debug('toggleQuickActions');
       if ($rootScope.quickActions) {
         $rootScope.quickActions = false;
         localStorageService.set('quickActions', false);

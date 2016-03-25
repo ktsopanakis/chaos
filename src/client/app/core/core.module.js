@@ -15,7 +15,8 @@
       /* 3rd-party modules */
       'ui.router',
       'LocalStorageModule',
-      'anim-in-out'
+      'anim-in-out',
+      'pascalprecht.translate',
     ]);
 
 })(angular);
