@@ -32,6 +32,7 @@ module.exports = function() {
       ignorePath: '../..'
     },
     js: [
+      client + '**/*.module.js',
       client + '**/*.js',
       '!' + client + '**/*.spec.js'
     ],

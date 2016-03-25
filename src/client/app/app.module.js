@@ -25,7 +25,14 @@
       EXAMPLES: 'Examples',
       SUBTITLE: 'Subtitle translated by angular trnaslate service',
       'GO TO DASHBOARD': 'Go to dashboard',
-      'GO TO EXAMPLES': 'Go to example'
+      'GO TO EXAMPLES': 'Go to example',
+      'OPTIONS':'Options',
+      FULLSCREEN:'Fullscreen',
+      SIDEBAR:'Sidebar',
+      'QUICK ACTIONS':'Quick Actions',
+      'SELECT LANGUAGE':'Select Language',
+      'SETTINGS':'Settings',
+      'BOOTSTRAP EXAMPLES':'Bootstrap Examples'
     };
     var translationsGR = {
       HOME: 'Αρχική',
@@ -33,7 +40,15 @@
       EXAMPLES: 'Παραδείγματα',
       SUBTITLE: 'Υποτιτλος μεταφραζμένος από το angular translate service',
       'GO TO DASHBOARD': 'Πήγαινε στη κονσόλα',
-      'GO TO EXAMPLES': 'Πήγαινε σστα παραδείγματα'
+      'GO TO EXAMPLES': 'Πήγαινε σστα παραδείγματα',
+      'OPTIONS':'Επιλογές',
+      FULLSCREEN:'Πλήρης οθόνη',
+      SIDEBAR:'Αριστερή μπάρα',
+      'QUICK ACTIONS':'Γρήγορες ενέργειες',
+      'SELECT LANGUAGE':'Επιλογή Γλώσσας',
+      'SETTINGS':'Ρυθμίσεις',
+      'BOOTSTRAP EXAMPLES':'Παραδειγματα Bootstrap'
+
     };
     $translateProvider
       .translations('en', translationsEN)
@@ -70,6 +85,17 @@
           url: '/',
           templateUrl: 'app/core/layout/home.html',
           controller: 'homeController'
+        })
+        .state('settings', {
+          data: {
+            displayName: 'Settings',
+            subTitle: 'Settings',
+            requireGuest: false,
+            icon: 'glyphicon-road'
+          },
+          url: '/settings',
+          templateUrl: 'app/core/layout/settings.html',
+          controller: 'settingsController'
         });
     }
   ]);
