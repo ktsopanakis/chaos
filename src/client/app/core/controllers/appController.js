@@ -18,12 +18,22 @@
     $scope.__name = 'appController';
     $log.debug($scope.__name + ' has id ' + $scope.$id);
 
+    //TODO: localStorage service that stores information on the server, and reproduces them in next login
+
+
+    if (localStorageService.get('lang') !== null) {
+      $translate.use(localStorageService.get('lang'));
+    }
+
     $rootScope.changeLanguage = function(langKey) {
       //TODO: language preference should be stored, and used in future also
+
       $log.debug('changing languade to ' + langKey);
+      localStorageService.set('lang',langKey);
       $translate.use(langKey);
     };
 
+    //TODO: the 3 bellow $rootscope settings follow the same patern, they should be coded DRY instead of this.
     //TODO: the listener does not handle F11
     $rootScope.fullScreen = false;
     if (screenfull.enabled) {
@@ -42,6 +52,9 @@
         }
       }
     };
+
+
+
 
 
 

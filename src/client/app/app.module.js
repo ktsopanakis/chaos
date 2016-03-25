@@ -11,23 +11,29 @@
   ng.module('app')
     .factory('appCustomHandlerFactory', ['$log', function($log) {
       return function(translationID, uses) {
-        $log.error('[Missing ' + translationID + ']');
-        return '[Missing ' + translationID + ']';
+        $log.warn('[Missing ' + translationID + ']');
+        return '[?' + translationID + ']';
       };
     }])
 
+
+    //TODO: the translations should be stored inn seperate files
   .config(['$translateProvider', function($translateProvider) {
     var translationsEN = {
       HOME: 'Home',
       DASHBOARD: 'Dashboard',
       EXAMPLES: 'Examples',
-      SUBTITLE: 'Subtitle translated by angular trnaslate service'
+      SUBTITLE: 'Subtitle translated by angular trnaslate service',
+      'GO TO DASHBOARD': 'Go to dashboard',
+      'GO TO EXAMPLES': 'Go to example'
     };
     var translationsGR = {
       HOME: 'Αρχική',
       DASHBOARD: 'Κονσόλα',
       EXAMPLES: 'Παραδείγματα',
-      SUBTITLE: 'Υποτιτλος μεταφραζμένος από το angular translate service'
+      SUBTITLE: 'Υποτιτλος μεταφραζμένος από το angular translate service',
+      'GO TO DASHBOARD': 'Πήγαινε στη κονσόλα',
+      'GO TO EXAMPLES': 'Πήγαινε σστα παραδείγματα'
     };
     $translateProvider
       .translations('en', translationsEN)
