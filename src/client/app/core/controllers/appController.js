@@ -9,15 +9,31 @@
     '$state',
     '$scope',
     '$rootScope',
-    '$log'
+    '$log',
+    'localStorageService',
+    '$translate'
   ];
 
-  function appController($state, $scope, $rootScope,$log) {
+  function appController($state, $scope, $rootScope, $log, localStorageService, $translate) {
     $scope.__name = 'appController';
-    $log.debug($scope.__name+' has id '+$scope.$id);
+    $log.debug($scope.__name + ' has id ' + $scope.$id);
 
-    //TODO: toggled values shoudl persist refreshes, store info locally
+    //TODO: localStorage service that stores information on the server, and reproduces them in next login
 
+
+    if (localStorageService.get('lang') !== null) {
+      $translate.use(localStorageService.get('lang'));
+    }
+
+    $rootScope.changeLanguage = function(langKey) {
+      //TODO: language preference should be stored, and used in future also
+
+      $log.debug('changing languade to ' + langKey);
+      localStorageService.set('lang',langKey);
+      $translate.use(langKey);
+    };
+
+    //TODO: the 3 bellow $rootscope settings follow the same patern, they should be coded DRY instead of this.
     //TODO: the listener does not handle F11
     $rootScope.fullScreen = false;
     if (screenfull.enabled) {
@@ -37,21 +53,45 @@
       }
     };
 
-    $rootScope.sidebar = true;
+
+
+
+
+
+    if (localStorageService.get('sidebar') !== null) {
+      $rootScope.sidebar = localStorageService.get('sidebar');
+    } else {
+      $rootScope.sidebar = true;
+      localStorageService.set('sidebar', true);
+    }
+
     $rootScope.toggleSidebar = function() {
+      $log.debug('toggleSidebar');
       if ($rootScope.sidebar) {
         $rootScope.sidebar = false;
+        localStorageService.set('sidebar', false);
       } else {
         $rootScope.sidebar = true;
+        localStorageService.set('sidebar', true);
       }
     };
 
-    $rootScope.quickActions = false;
+
+    if (localStorageService.get('quickActions') !== null) {
+      $rootScope.quickActions = localStorageService.get('quickActions');
+    } else {
+      $rootScope.quickActions = false;
+      localStorageService.set('quickActions', false);
+    }
+
     $rootScope.toggleQuickActions = function() {
+      $log.debug('toggleQuickActions');
       if ($rootScope.quickActions) {
         $rootScope.quickActions = false;
+        localStorageService.set('quickActions', false);
       } else {
         $rootScope.quickActions = true;
+        localStorageService.set('quickActions', true);
       }
     };
 

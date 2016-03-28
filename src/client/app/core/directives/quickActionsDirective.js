@@ -8,8 +8,7 @@
       restrict: 'E',
       controller: 'quickActionsController',
       replace: true,
-      templateUrl: 'app/core/layout/quickActions.html',
-      scope: {}
+      templateUrl: 'app/core/layout/quickActions.html'
     };
   }
 })(angular);

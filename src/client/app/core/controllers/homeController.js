@@ -12,8 +12,8 @@
     '$log'
   ];
 
-  function homeController($state, $scope, $rootScope,$log) {
+  function homeController($state, $scope, $rootScope, $log) {
     $scope.__name = 'homeController';
-    $log.debug($scope.__name+' has id '+$scope.$id);
+    $log.debug($scope.__name + ' has id ' + $scope.$id);
   }
 })();

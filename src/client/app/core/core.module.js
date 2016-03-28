@@ -13,7 +13,11 @@
       'ngMessages',
       'ngTouch',
       /* 3rd-party modules */
-      'ui.router'
+      'ui.router',
+      'LocalStorageModule',
+      'anim-in-out',
+      'pascalprecht.translate',
+      'schemaForm'
     ]);
 
 })(angular);

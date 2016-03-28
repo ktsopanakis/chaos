@@ -14,3 +14,5 @@
       return messages;
     });
 })(angular);
+
+//TODO: make breadcrump service/directive that works

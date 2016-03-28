@@ -10,9 +10,9 @@
     '$log'
   ];
 
-  function navHeaderController($rootScope, $scope,$log) {
+  function navHeaderController($rootScope, $scope, $log) {
     $scope.__name = 'navHeaderController';
-    $log.debug($scope.__name+' has id '+$scope.$id);
+    $log.debug($scope.__name + ' has id ' + $scope.$id);
   }
 
 })(angular);

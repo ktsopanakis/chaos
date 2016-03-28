@@ -21,6 +21,17 @@
             url: '/examples',
             templateUrl: 'app/modules/examples/examples.html',
             controller: 'examplesController'
+          })
+          .state('bootstrapExamples', {
+            data: {
+              displayName:'Bootstrap Examples',
+              subTitle: '',
+              icon: 'glyphicon-road'
+            },
+            //requireLogin: true,
+            url: '/bootstrapExamples',
+            templateUrl: 'app/modules/examples/bootstrapExamples.html',
+            controller: 'bootstrapExamplesController'
           });
       }
     ]);

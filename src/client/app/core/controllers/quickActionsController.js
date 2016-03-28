@@ -12,7 +12,7 @@
 
   function quickActionsController($rootScope, $scope, $log) {
     $scope.__name = 'quickActionsController';
-    $log.debug($scope.__name+' has id '+$scope.$id);
+    $log.debug($scope.__name + ' has id ' + $scope.$id);
   }
 
 })(angular);

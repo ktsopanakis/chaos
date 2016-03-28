@@ -9,7 +9,7 @@ module.exports = function() {
     /**
      * browser sync
      */
-    browserReloadDelay: 1000,
+    browserReloadDelay: 3000,
 
     alljs: [
       './src/**/**.js',
@@ -32,6 +32,7 @@ module.exports = function() {
       ignorePath: '../..'
     },
     js: [
+      client + '**/*.module.js',
       client + '**/*.js',
       '!' + client + '**/*.spec.js'
     ],

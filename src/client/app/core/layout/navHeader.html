@@ -16,38 +16,41 @@
 
       <ul class="nav navbar-nav">
         <li ui-sref-active="active">
-          <a ui-sref="home">Home</a>
+          <a ui-sref="home">{{'HOME'|translate}}</a>
         </li>
         <li ui-sref-active="active">
-          <a ui-sref="dashboard">Dashboard</a>
+          <a ui-sref="dashboard">{{'DASHBOARD'|translate}}</a>
         </li>
-        <li ui-sref-active="active">
-          <a ui-sref="examples">Examples</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
+        <li ui-sref-active="active" class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{'EXAMPLES'|translate}}
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li>
-              <a href="#">Action</a>
+            <li >
+              <a ui-sref="examples" href="">{{'EXAMPLES'|translate}}</a>
             </li>
-            <li>
-              <a href="#">Another action</a>
+            <li >
+              <a ui-sref="bootstrapExamples" href="">{{'BOOTSTRAP EXAMPLES'|translate}}</a>
             </li>
-            <li>
-              <a href="#">Something else here</a>
+          </ul>
+        </li>
+
+
+        <li ui-sref-active="active" class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{'OPTIONS'|translate}}
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li >
+              <a ui-sref="settings" href="">{{'SETTINGS'|translate}}</a>
             </li>
             <li role="separator" class="divider"></li>
-            <li class="dropdown-header">Nav header</li>
+            <li class="dropdown-header">{{'SELECT LANGUAGE'|translate}}</li>
             <li>
-              <a href="#">Separated link</a>
+              <a ng-click="$root.changeLanguage('en')" href="">English</a>
             </li>
             <li>
-              <a href="#">One more separated link</a>
+              <a ng-click="$root.changeLanguage('gr')"  href="">Ελληνικά</a>
             </li>
           </ul>
         </li>
@@ -55,13 +58,13 @@
 
       <ul class="nav navbar-nav navbar-right hidden-xs">
         <li ng-class="{active:$root.fullScreen}">
-          <a ng-click="$root.toggleFullScreen()" href='#'>Fullscreen</a>
+          <a ng-click="$root.toggleFullScreen()" href>{{'FULLSCREEN'|translate}}</a>
         </li>
         <li ng-class="{active:$root.quickActions}">
-          <a ng-click="$root.toggleQuickActions()" href='#'>Quick actions</a>
+          <a ng-click="$root.toggleQuickActions()" href>{{'QUICK ACTIONS'|translate}}</a>
         </li>
         <li ng-class="{active:$root.sidebar}">
-          <a ng-click="$root.toggleSidebar()" href='#'>Sidebar</a>
+          <a ng-click="$root.toggleSidebar()" href>{{'SIDEBAR'|translate}}</a>
         </li>
       </ul>
 

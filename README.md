@@ -10,6 +10,22 @@ is an example
 
 
 in order ot use the $log without issues one has to blackbox angular.js in chrome, then you can see the correct lines that are being edited
+in roder to get the root scope from the console
+//$rootScope = angular.element(document).scope()
+
+in chrome black boxing in order for $log to work nicely
+
+
+//TODO: add vagrant
+//TODO: add resources, and communication with the server
+//TODO: add forms
+//TODO: add forms using http://schemaform.io/
+//TODO: manage routing with parameters, states, should hold parameters
+//TODO: gridster
+//TODO: testing
+//TODO: manage authentication/authorization/permissions/login/logout
+//TODO: add directive for tables, and create ways of getting data from server
+//TODO: gridstack or gridster or somethign similar, that can save state on server, for better dashboards
 
 
 Also the project at the moment has no use for vagrant
