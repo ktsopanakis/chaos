@@ -8,6 +8,10 @@ gulp vet --verbose
 ```
 is an example
 
+
+in order ot use the $log without issues one has to blackbox angular.js in chrome, then you can see the correct lines that are being edited
+
+
 Also the project at the moment has no use for vagrant
 
 only one client can be active at one time, but multiple clients can be created
