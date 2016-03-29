@@ -1,4 +1,4 @@
-/* global screenfull */
+/* global screenfull,$ */
 (function() {
   'use strict';
 
@@ -9,11 +9,13 @@
     '$state',
     '$scope',
     '$rootScope',
-    '$log'
+    '$log',
+    'controllerInitService'
   ];
 
-  function homeController($state, $scope, $rootScope, $log) {
-    $scope.__name = 'homeController';
-    $log.debug($scope.__name + ' has id ' + $scope.$id);
+  function homeController($state, $scope, $rootScope, $log,controllerInitService) {
+    /* jshint -W040 */
+    controllerInitService.init(this,$scope,true);
+
   }
 })();

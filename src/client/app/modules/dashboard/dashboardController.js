@@ -1,12 +1,12 @@
+/* global $ */
 (function(ng) {
   'use strict';
 
   ng.module('dashboard').controller('dashboardController',
     dashboardController);
-  dashboardController.$inject = ['$scope', '$log'];
+  dashboardController.$inject = ['$scope', '$log','controllerInitService'];
 
-  function dashboardController($scope, $log) {
-    $scope.__name = 'dashboardController';
-    $log.debug($scope.__name + ' has id ' + $scope.$id);
+  function dashboardController($scope, $log,controllerInitService) {
+    controllerInitService.init(this,$scope, true);
   }
 })(angular);

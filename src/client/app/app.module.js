@@ -37,7 +37,8 @@
       'QUICK ACTIONS': 'Quick Actions',
       'SELECT LANGUAGE': 'Select Language',
       'SETTINGS': 'Settings',
-      'BOOTSTRAP EXAMPLES': 'Bootstrap Examples'
+      'BOOTSTRAP EXAMPLES': 'Bootstrap Examples',
+      'FAST ACTIONS':'Fast Actions'
     };
     var translationsGR = {
       HOME: 'Αρχική',
@@ -52,7 +53,8 @@
       'QUICK ACTIONS': 'Γρήγορες ενέργειες',
       'SELECT LANGUAGE': 'Επιλογή Γλώσσας',
       'SETTINGS': 'Ρυθμίσεις',
-      'BOOTSTRAP EXAMPLES': 'Παραδειγματα Bootstrap'
+      'BOOTSTRAP EXAMPLES': 'Παραδειγματα Bootstrap',
+      'FAST ACTIONS':'Γρηγορες Ενέργειες'
 
     };
     $translateProvider

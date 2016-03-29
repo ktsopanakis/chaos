@@ -1,4 +1,4 @@
-/* global screenfull */
+/* global screenfull,$ */
 (function() {
   'use strict';
 
@@ -17,6 +17,14 @@
   function appController($state, $scope, $rootScope, $log, localStorageService, $translate) {
     $scope.__name = 'appController';
     $log.debug($scope.__name + ' has id ' + $scope.$id);
+
+    $rootScope.$on('$stateChangeStart', function() {
+      $('footer').hide();
+    });
+    $rootScope.$on('$stateChangeSuccess', function(event) {
+      $('footer').show();
+    });
+
 
     //TODO: localStorage service that stores information on the server, and reproduces them in next login
 

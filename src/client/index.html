@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css"/>
     <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/datatables.net-bs/css/dataTables.bootstrap.css"/>
-    <link rel="stylesheet" href="/bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.css"/>
-    <link rel="stylesheet" href="/bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.css"/>
-    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css"/>
-    <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.css"/>
+    <link rel="stylesheet" href="/bower_components/datatables.net-bs/css/dataTables.bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/datatables.net-buttons-bs/css/buttons.bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/angular-ui-router-anim-in-out/css/anim-in-out.css" />
+    <link rel="stylesheet" href="/bower_components/Ionicons/css/ionicons.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -31,18 +31,18 @@
   </head>
 
   <body ng-controller="appController" class="hold-transition skin-blue sidebar-mini">
-
+<!--
     <div style="z-index:10000; background-color:#ece2e1; position: fixed; bottom: 0; left: 0; right: 0; top: 0;" ng-if=" false">
       <p>
         <h3 style=" left: 0; line-height: 200px; margin-top: -100px; position: absolute; text-align: center; top: 50%; width: 100%;">
           Chaos loading
         </h3>
       </p>
-    </div>
+    </div> -->
 
     <div class="wrapper">
       <nav-header-directive></nav-header-directive>
-      <nav-sidebar-directive ng-if="$root.sidebar"></nav-sidebar-directive>
+      <nav-sidebar-directive></nav-sidebar-directive>
       <div class="content-wrapper" ui-view></div>
       <div ng-include="'app/core/layout/footer.html'"></div>
       <quick-actions-directive></quick-actions-directive>
@@ -79,7 +79,6 @@
     <script src="/bower_components/iCheck/icheck.min.js"></script>
     <!-- endbower -->
     <script src="/bower_components/screenfull/dist/screenfull.js"></script>
-    <script src="/dist/app.js"></script>
     <!-- endbuild -->
 
     <!-- build:js js/app.js-->
@@ -90,17 +89,18 @@
     <script src="/src/client/app/modules/examples/examples.module.js"></script>
     <script src="/src/client/app/core/controllers/alertController.js"></script>
     <script src="/src/client/app/core/controllers/appController.js"></script>
-    <script src="/src/client/app/core/controllers/breadcrumbController.js"></script>
+    <script src="/src/client/app/core/controllers/contentHeaderController.js"></script>
     <script src="/src/client/app/core/controllers/homeController.js"></script>
     <script src="/src/client/app/core/controllers/navHeaderController.js"></script>
     <script src="/src/client/app/core/controllers/navSidebarController.js"></script>
     <script src="/src/client/app/core/controllers/quickActionsController.js"></script>
     <script src="/src/client/app/core/controllers/settingsController.js"></script>
     <script src="/src/client/app/core/directives/alertDircetive.js"></script>
-    <script src="/src/client/app/core/directives/breadcrumbDirective.js"></script>
+    <script src="/src/client/app/core/directives/contentHeaderDirective.js"></script>
     <script src="/src/client/app/core/directives/navHeaderDirective.js"></script>
     <script src="/src/client/app/core/directives/navSidebarDirective.js"></script>
     <script src="/src/client/app/core/directives/quickActionsDirective.js"></script>
+    <script src="/src/client/app/core/services/controllerInitService.js"></script>
     <script src="/src/client/app/core/services/navigationService.js"></script>
     <script src="/src/client/app/modules/dashboard/dashboardController.js"></script>
     <script src="/src/client/app/modules/examples/bootstrapExamplesController.js"></script>
@@ -109,6 +109,7 @@
     <!-- inject:templates:js -->
     <script src="/.tmp/templates.js"></script>
     <!-- endinject -->
+    <script src="/dist/app.js"></script>
     <!-- endbuild -->
   </body>
 </html>
