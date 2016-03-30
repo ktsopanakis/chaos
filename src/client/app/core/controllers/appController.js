@@ -19,10 +19,16 @@
     $log.debug($scope.__name + ' has id ' + $scope.$id);
 
     $rootScope.$on('$stateChangeStart', function() {
+      $log.debug('stete transition starting');
       $('footer').hide();
     });
     $rootScope.$on('$stateChangeSuccess', function(event) {
-      $('footer').show();
+      $log.debug('stete transition ending');
+      setTimeout(
+        function() {
+          $('footer').show();
+        }, 500
+      );
     });
 
 
@@ -37,7 +43,7 @@
       //TODO: language preference should be stored, and used in future also
 
       $log.debug('changing languade to ' + langKey);
-      localStorageService.set('lang',langKey);
+      localStorageService.set('lang', langKey);
       $translate.use(langKey);
     };
 

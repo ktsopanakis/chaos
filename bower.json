@@ -37,7 +37,6 @@
     "datatables.net-responsive": "^2.0.2",
     "datatables.net-responsive-bs": "^2.0.2",
     "angular-local-storage": "^0.2.7",
-    "angular-ui-router-anim-in-out": "^1.0.2",
     "angular-translate": "^2.11.0",
     "font-awesome": "^4.5.0",
     "Ionicons": "ionicons#^2.0.1",
