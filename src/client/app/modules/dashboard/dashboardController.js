@@ -4,10 +4,10 @@
 
   ng.module('dashboard').controller('dashboardController',
     dashboardController);
-  dashboardController.$inject = ['$scope', '$log','controllerInitService'];
+  dashboardController.$inject = ['$scope', '$log', 'controllerInitService'];
 
-  function dashboardController($scope, $log,controllerInitService) {
-      /* jshint -W040 */
-    controllerInitService.init(this,$scope, true);
+  function dashboardController($scope, $log, controllerInitService) {
+    /* jshint -W040 */
+    controllerInitService.init(this, $scope, true);
   }
 })(angular);

@@ -20,11 +20,11 @@
     controllerInitService.init(this, $scope, false);
 
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-      $log.debug('$on $stateChangeStart from "' + fromState.name + '" to "' + toState.name+'"');
+      $log.debug('$on $stateChangeStart from "' + fromState.name + '" to "' + toState.name + '"');
       $('footer').hide();
     });
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-      $log.debug('$on $stateChangeSuccess from "' + fromState.name + '" to "' + toState.name+'"');
+      $log.debug('$on $stateChangeSuccess from "' + fromState.name + '" to "' + toState.name + '"');
       setTimeout(
         function() {
           $('footer').show();

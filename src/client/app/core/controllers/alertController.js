@@ -11,9 +11,9 @@
     'controllerInitService'
   ];
 
-  function alertController($rootScope, $scope, $log,controllerInitService) {
+  function alertController($rootScope, $scope, $log, controllerInitService) {
     /* jshint -W040 */
-    controllerInitService.init(this,$scope,false);
+    controllerInitService.init(this, $scope, false);
   }
 
 })(angular);

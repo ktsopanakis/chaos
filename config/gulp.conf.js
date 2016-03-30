@@ -21,6 +21,7 @@ module.exports = function() {
     temp: temp,
     fonts: [
       './bower_components/bootstrap/fonts/**/*.*',
+      './bower_components/font-awesome/fonts/**/*.*',
       client + 'fonts/**/*.*'
     ],
     images: client + 'images/**/*.*',

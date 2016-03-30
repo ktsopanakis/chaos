@@ -16,7 +16,8 @@
     'controllerInitService'
   ];
 
-  function settingsController($state, $scope, $rootScope, $log,controllerInitService) {
+  function settingsController($state, $scope, $rootScope, $log, controllerInitService) {
     /* jshint -W040 */
-    controllerInitService.init(this, $scope, false);  }
+    controllerInitService.init(this, $scope, false);
+  }
 })();

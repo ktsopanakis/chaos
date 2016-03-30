@@ -11,7 +11,7 @@
     'controllerInitService'
   ];
 
-  function navHeaderController($rootScope, $scope, $log,controllerInitService) {
+  function navHeaderController($rootScope, $scope, $log, controllerInitService) {
     /* jshint -W040 */
     controllerInitService.init(this, $scope, false);
   }
