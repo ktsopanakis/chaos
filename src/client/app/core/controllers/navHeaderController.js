@@ -7,12 +7,13 @@
   navHeaderController.$inject = [
     '$rootScope',
     '$scope',
-    '$log'
+    '$log',
+    'controllerInitService'
   ];
 
-  function navHeaderController($rootScope, $scope, $log) {
-    $scope.__name = 'navHeaderController';
-    $log.debug($scope.__name + ' has id ' + $scope.$id);
+  function navHeaderController($rootScope, $scope, $log,controllerInitService) {
+    /* jshint -W040 */
+    controllerInitService.init(this, $scope, false);
   }
 
 })(angular);

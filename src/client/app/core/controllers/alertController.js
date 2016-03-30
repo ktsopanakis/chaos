@@ -7,12 +7,13 @@
   alertController.$inject = [
     '$rootScope',
     '$scope',
-    '$log'
+    '$log',
+    'controllerInitService'
   ];
 
-  function alertController($rootScope, $scope, $log) {
-    $scope.__name = 'alertController';
-    $log.debug($scope.__name + ' has id ' + $scope.$id);
+  function alertController($rootScope, $scope, $log,controllerInitService) {
+    /* jshint -W040 */
+    controllerInitService.init(this,$scope,false);
   }
 
 })(angular);

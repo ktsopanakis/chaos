@@ -7,12 +7,12 @@
   quickActionsController.$inject = [
     '$rootScope',
     '$scope',
-    '$log'
+    '$log',
+    'controllerInitService'
   ];
 
-  function quickActionsController($rootScope, $scope, $log) {
-    $scope.__name = 'quickActionsController';
-    $log.debug($scope.__name + ' has id ' + $scope.$id);
-  }
+  function quickActionsController($rootScope, $scope, $log,controllerInitService) {
+    /* jshint -W040 */
+    controllerInitService.init(this, $scope, false);  }
 
 })(angular);

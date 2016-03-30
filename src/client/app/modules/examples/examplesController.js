@@ -11,12 +11,13 @@
     '$log',
     '$translate',
     '$rootScope',
-    '$resource'
+    '$resource',
+    'controllerInitService'
   ];
 
-  function examplesController($scope, $log, $translate, $rootScope, $resource) {
-    $scope.__name = 'examplesController';
-    $log.debug($scope.__name + ' has id ' + $scope.$id);
+  function examplesController($scope, $log, $translate, $rootScope, $resource,controllerInitService) {
+    /* jshint -W040 */
+    controllerInitService.init(this,$scope, true);
 
     //TODO: the icons of the forms appear in the first field only, cannot understand why
 

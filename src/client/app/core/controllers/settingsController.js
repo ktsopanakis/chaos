@@ -12,11 +12,11 @@
     '$state',
     '$scope',
     '$rootScope',
-    '$log'
+    '$log',
+    'controllerInitService'
   ];
 
-  function settingsController($state, $scope, $rootScope, $log) {
-    $scope.__name = 'settingsController';
-    $log.debug($scope.__name + ' has id ' + $scope.$id);
-  }
+  function settingsController($state, $scope, $rootScope, $log,controllerInitService) {
+    /* jshint -W040 */
+    controllerInitService.init(this, $scope, false);  }
 })();

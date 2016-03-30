@@ -11,12 +11,13 @@
     '$rootScope',
     '$log',
     'localStorageService',
-    '$translate'
+    '$translate',
+    'controllerInitService'
   ];
 
-  function appController($state, $scope, $rootScope, $log, localStorageService, $translate) {
-    $scope.__name = 'appController';
-    $log.debug($scope.__name + ' has id ' + $scope.$id);
+  function appController($state, $scope, $rootScope, $log, localStorageService, $translate, controllerInitService) {
+    /* jshint -W040 */
+    controllerInitService.init(this, $scope, false);
 
     $rootScope.$on('$stateChangeStart', function() {
       $log.debug('stete transition starting');

@@ -7,12 +7,12 @@
   navSidebarController.$inject = [
     '$rootScope',
     '$scope',
-    '$log'
+    '$log',
+    'controllerInitService'
   ];
 
-  function navSidebarController($rootScope, $scope, $log) {
-    $scope.__name = 'navSidebarController';
-    $log.debug($scope.__name + ' has id ' + $scope.$id);
-  }
+  function navSidebarController($rootScope, $scope, $log,controllerInitService) {
+    /* jshint -W040 */
+    controllerInitService.init(this, $scope, false);  }
 
 })(angular);

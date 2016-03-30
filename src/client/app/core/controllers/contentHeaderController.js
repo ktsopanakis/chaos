@@ -11,8 +11,9 @@
     'controllerInitService'
   ];
 
-  function contentHeaderController($rootScope, $scope, $log,controllerInitService) {
-    controllerInitService.init(this,$scope,false);
+  function contentHeaderController($rootScope, $scope, $log, controllerInitService) {
+    /* jshint -W040 */
+    controllerInitService.init(this, $scope, false);
   }
 
 })(angular);
