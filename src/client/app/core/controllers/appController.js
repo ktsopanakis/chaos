@@ -80,15 +80,20 @@
       localStorageService.set('sidebar', true);
     }
 
-    $rootScope.toggleSidebar = function() {
+    $rootScope.toggleSidebar = function(checkbox) {
       $log.debug('toggleSidebar');
-      if ($rootScope.sidebar) {
-        $rootScope.sidebar = false;
-        localStorageService.set('sidebar', false);
+      if (checkbox) {
+          localStorageService.set('sidebar', $rootScope.sidebar);
       } else {
-        $rootScope.sidebar = true;
-        localStorageService.set('sidebar', true);
+        if ($rootScope.sidebar) {
+          $rootScope.sidebar = false;
+          localStorageService.set('sidebar', false);
+        } else {
+          $rootScope.sidebar = true;
+          localStorageService.set('sidebar', true);
+        }
       }
+
     };
 
 
@@ -99,16 +104,19 @@
       localStorageService.set('quickActions', false);
     }
 
-    $rootScope.toggleQuickActions = function() {
+    $rootScope.toggleQuickActions = function(checkbox) {
       $log.debug('toggleQuickActions');
-      if ($rootScope.quickActions) {
-        $rootScope.quickActions = false;
-        localStorageService.set('quickActions', false);
+      if (checkbox) {
+          localStorageService.set('quickActions', $rootScope.quickActions);
       } else {
-        $rootScope.quickActions = true;
-        localStorageService.set('quickActions', true);
+        if ($rootScope.quickActions) {
+          $rootScope.quickActions = false;
+          localStorageService.set('quickActions', false);
+        } else {
+          $rootScope.quickActions = true;
+          localStorageService.set('quickActions', true);
+        }
       }
     };
-
   }
 })();
