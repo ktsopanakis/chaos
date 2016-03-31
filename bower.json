@@ -40,6 +40,7 @@
     "angular-translate": "^2.11.0",
     "font-awesome": "^4.5.0",
     "Ionicons": "ionicons#^2.0.1",
-    "iCheck": "icheck#^1.0.2"
+    "iCheck": "icheck#^1.0.2",
+    "angular-gridstack": "^0.1.0"
   }
 }

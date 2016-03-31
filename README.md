@@ -19,14 +19,15 @@ in chrome black boxing in order for $log to work nicely
 //TODO: add vagrant
 //TODO: add resources, and communication with the server
 //TODO: add forms
-//TODO: add forms using http://schemaform.io/
+//TODO: add forms using http://schemaform.io/ logic, but not the library itself
 //TODO: manage routing with parameters, states, should hold parameters
 //TODO: gridster
 //TODO: testing
 //TODO: manage authentication/authorization/permissions/login/logout
 //TODO: add directive for tables, and create ways of getting data from server
 //TODO: gridstack or gridster or somethign similar, that can save state on server, for better dashboards
-
+//TODO: try to removve dependancy on localStorage
+//TODO: have to make the   loading screen a bti better
 
 Also the project at the moment has no use for vagrant
 

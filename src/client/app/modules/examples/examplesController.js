@@ -2,9 +2,7 @@
 (function(ng) {
   'use strict';
 
-  //TODO: have to make the   loading screen a bti better
-
-  ng.module('examples').controller('examplesController',
+    ng.module('examples').controller('examplesController',
     examplesController);
   examplesController.$inject = [
     '$scope',
