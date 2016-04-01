@@ -38,8 +38,7 @@
       }
     ])
 
-  .config(["navigationProvider", function(navigationProvider) {
-      console.log('test');
+  .config(['navigationProvider', function(navigationProvider) {
       navigationProvider.addHeaderNavItem({
         name: 'Examples',
         order: 3,

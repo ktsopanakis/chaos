@@ -18,7 +18,8 @@
     $translate,
     $rootScope,
     $resource,
-    controllerInitService) {
+    controllerInitService
+    ) {
 
     /* jshint -W040 */
     controllerInitService.init(this, $scope, true);

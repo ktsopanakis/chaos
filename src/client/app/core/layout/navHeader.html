@@ -13,9 +13,10 @@
 
     <div id="navbar" class="navbar-collapse collapse navbar-left" >
       <ul class="nav navbar-nav">
-        <li ng-repeat="navItem in headerNavItems">
+        <li ui-sref-active="active" ng-repeat="navItem in headerNavItems">
           <a ui-sref='{{navItem.uisref}}'>{{navItem.name}}</a>
         </li>
+        <!--
         <li ui-sref-active="active">
           <a ui-sref="home">{{'HOME'|translate}}</a>
         </li>
@@ -34,7 +35,7 @@
               <a ui-sref="bootstrapExamples" href="">{{'BOOTSTRAP EXAMPLES'|translate}}</a>
             </li>
           </ul>
-        </li>
+        </li>-->
     </div>
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
