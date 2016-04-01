@@ -2,7 +2,7 @@
 (function(ng) {
   'use strict';
 
-    ng.module('examples').controller('examplesController',
+  ng.module('examples').controller('examplesController',
     examplesController);
   examplesController.$inject = [
     '$scope',
@@ -13,9 +13,9 @@
     'controllerInitService'
   ];
 
-  function examplesController($scope, $log, $translate, $rootScope, $resource,controllerInitService) {
+  function examplesController($scope, $log, $translate, $rootScope, $resource, controllerInitService) {
     /* jshint -W040 */
-    controllerInitService.init(this,$scope, true);
+    controllerInitService.init(this, $scope, true);
 
     //TODO: the icons of the forms appear in the first field only, cannot understand why
 

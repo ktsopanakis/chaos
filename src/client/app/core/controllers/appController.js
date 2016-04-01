@@ -50,6 +50,8 @@
 
     //TODO: the 3 bellow $rootscope settings follow the same patern, they should be coded DRY instead of this.
     //TODO: the listener does not handle F11
+
+
     $rootScope.fullScreen = false;
     if (screenfull.enabled) {
       document.addEventListener(screenfull.raw.fullscreenchange, function() {
@@ -58,12 +60,24 @@
       });
     }
 
-    $rootScope.toggleFullScreen = function() {
-      if (screenfull.enabled) {
-        if ($rootScope.fullScreen) {
-          screenfull.exit();
-        } else {
-          screenfull.request();
+    $rootScope.toggleFullScreen = function(checkbox) {
+      $log.debug('toggleFullScreen');
+      if (checkbox) {
+        localStorageService.set('fullScreen', $rootScope.fullScreen);
+        if (screenfull.enabled) {
+          if ($rootScope.fullScreen) {
+            screenfull.request();
+          } else {
+            screenfull.exit();
+          }
+        }
+      } else {
+        if (screenfull.enabled) {
+          if ($rootScope.fullScreen) {
+            screenfull.exit();
+          } else {
+            screenfull.request();
+          }
         }
       }
     };
@@ -83,7 +97,7 @@
     $rootScope.toggleSidebar = function(checkbox) {
       $log.debug('toggleSidebar');
       if (checkbox) {
-          localStorageService.set('sidebar', $rootScope.sidebar);
+        localStorageService.set('sidebar', $rootScope.sidebar);
       } else {
         if ($rootScope.sidebar) {
           $rootScope.sidebar = false;
@@ -107,7 +121,7 @@
     $rootScope.toggleQuickActions = function(checkbox) {
       $log.debug('toggleQuickActions');
       if (checkbox) {
-          localStorageService.set('quickActions', $rootScope.quickActions);
+        localStorageService.set('quickActions', $rootScope.quickActions);
       } else {
         if ($rootScope.quickActions) {
           $rootScope.quickActions = false;
