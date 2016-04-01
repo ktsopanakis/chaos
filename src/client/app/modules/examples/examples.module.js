@@ -5,6 +5,8 @@
     'app'
   ]);
 
+
+
   ng.module('app')
     .config([
       '$stateProvider',
@@ -12,7 +14,7 @@
         $stateProvider
           .state('examples', {
             data: {
-              displayName:'Examples',
+              displayName: 'Examples',
               subTitle: 'Home',
               requireGuest: false,
               icon: 'glyphicon-road'
@@ -24,7 +26,7 @@
           })
           .state('bootstrapExamples', {
             data: {
-              displayName:'Bootstrap Examples',
+              displayName: 'Bootstrap Examples',
               subTitle: '',
               icon: 'glyphicon-road'
             },
@@ -34,6 +36,16 @@
             controller: 'bootstrapExamplesController'
           });
       }
-    ]);
+    ])
 
+  .config(["navigationProvider", function(navigationProvider) {
+      console.log('test');
+      navigationProvider.addHeaderNavItem({
+        name: 'Examples',
+        order: 3,
+        level: 1,
+        parent: null,
+        uisref: 'examples'
+      });
+    }]) ;
 }(angular));

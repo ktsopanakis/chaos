@@ -8,12 +8,15 @@
     '$rootScope',
     '$scope',
     '$log',
-    'controllerInitService'
+    'controllerInitService',
+    'navigationService'
+
   ];
 
-  function navHeaderController($rootScope, $scope, $log, controllerInitService) {
+  function navHeaderController($rootScope, $scope, $log, controllerInitService,navigationService) {
     /* jshint -W040 */
     controllerInitService.init(this, $scope, false);
+    $scope.headerNavItems = navigationService.headerNavItems;
   }
 
 })(angular);
