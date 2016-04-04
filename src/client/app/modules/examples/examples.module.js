@@ -5,8 +5,6 @@
     'app'
   ]);
 
-
-
   ng.module('app')
     .config([
       '$stateProvider',
@@ -39,12 +37,12 @@
     ])
 
   .config(['navigationProvider', function(navigationProvider) {
-      navigationProvider.addHeaderNavItem({
-        name: 'Examples',
-        order: 3,
-        level: 1,
-        parent: null,
-        uisref: 'examples'
-      });
-    }]) ;
+    navigationProvider.addHeaderNavItem({
+      name: 'Examples',
+      order: 3,
+      level: 1,
+      parent: null,
+      uisref: 'examples'
+    });
+  }]);
 }(angular));

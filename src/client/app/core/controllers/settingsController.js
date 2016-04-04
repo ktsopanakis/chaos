@@ -4,7 +4,6 @@
 
   //TODO: in header navigation, active selection in both dropdon and main menu to ui-sref-active="active"
 
-
   angular.module('app')
     .controller('settingsController', settingsController);
 

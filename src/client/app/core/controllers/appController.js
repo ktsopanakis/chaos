@@ -32,9 +32,7 @@
       );
     });
 
-
     //TODO: localStorage service that stores information on the server, and reproduces them in next login
-
 
     if (localStorageService.get('lang') !== null) {
       $translate.use(localStorageService.get('lang'));
@@ -50,7 +48,6 @@
 
     //TODO: the 3 bellow $rootscope settings follow the same patern, they should be coded DRY instead of this.
     //TODO: the listener does not handle F11
-
 
     $rootScope.fullScreen = false;
     if (screenfull.enabled) {
@@ -82,11 +79,6 @@
       }
     };
 
-
-
-
-
-
     if (localStorageService.get('sidebar') !== null) {
       $rootScope.sidebar = localStorageService.get('sidebar');
     } else {
@@ -109,7 +101,6 @@
       }
 
     };
-
 
     if (localStorageService.get('quickActions') !== null) {
       $rootScope.quickActions = localStorageService.get('quickActions');

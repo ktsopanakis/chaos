@@ -18,6 +18,5 @@
 
 })(angular);
 
-
 //TODO: whne an open one is chenged to a closed one menu,
 //or when you navigat not from the sidebar, the result is not expected
