@@ -7,7 +7,6 @@
     'dashboard'
   ]);
 
-
   ng.module('app')
     .factory('appCustomHandlerFactory', ['$log', function($log) {
       return function(translationID, uses) {
@@ -16,14 +15,10 @@
       };
     }])
 
-
-
-
   .config(['$resourceProvider', function($resourceProvider) {
     // Don't strip trailing slashes from calculated URLs
     $resourceProvider.defaults.stripTrailingSlashes = false;
   }])
-
 
   //TODO: the translations should be stored inn seperate files
   .config(['$translateProvider', function($translateProvider) {
@@ -109,7 +104,8 @@
         });
     }
   ]);
-}(angular));(function(ng) {
+}(angular));
+(function(ng) {
   'use strict';
 
   ng.module('app', [
@@ -117,7 +113,6 @@
     'examples',
     'dashboard'
   ]);
-
 
   ng.module('app')
     .factory('appCustomHandlerFactory', ['$log', function($log) {
@@ -127,14 +122,10 @@
       };
     }])
 
-
-
-
   .config(['$resourceProvider', function($resourceProvider) {
     // Don't strip trailing slashes from calculated URLs
     $resourceProvider.defaults.stripTrailingSlashes = false;
   }])
-
 
   //TODO: the translations should be stored inn seperate files
   .config(['$translateProvider', function($translateProvider) {

@@ -26,6 +26,7 @@ var gulpUglify = require('gulp-uglify');
 var gulpNgAnnotate = require('gulp-ng-annotate');
 var gulpRev = require('gulp-rev');
 var gulpRevReplace = require('gulp-rev-replace');
+var gulpNaturalSort = require('gulp-natural-sort');
 
 // display all possible tasks
 gulp.task('help', gulpTaskListing);
@@ -140,6 +141,7 @@ gulp.task('inject', ['wiredep', 'styles', 'templatecache'], function() {
   helpers.log('Wire up the app css into the html, and call wiredep ');
   return gulp
     .src(config.index)
+    .pipe(gulpNaturalSort())
     .pipe(gulpIf(args.verbose, gulpPrint()))
     .pipe(gulpInject(gulp.src(config.css)))
     .pipe(gulp.dest(config.client));
@@ -212,7 +214,6 @@ gulp.task('build', ['optimize', 'images', 'fonts'], function() {
   del(config.temp);
   helpers.log(msg);
 });
-
 
 gulp.task('serve-build', ['build'], function() {
   helpers.serve(false /* isDev */ );
