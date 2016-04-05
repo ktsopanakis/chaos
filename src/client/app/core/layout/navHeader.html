@@ -3,7 +3,7 @@
     <span class="logo-mini">
       <b>A</b>LT</span>
     <span class="logo-lg">
-      <b>Admin</b>LTE</span>
+      <b>Chaos</b> Example</span>
   </a>
   <nav class="navbar navbar-static-top" role="navigation">
     <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -12,32 +12,17 @@
     <a class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
       <i class="fa fa-bars"></i>
     </a>
-
     <div id="navbar" class="navbar-collapse collapse navbar-left">
       <ul class="nav navbar-nav">
-        <li ui-sref-active="active" ng-repeat="navItem in headerNavItems">
-          <a ui-sref='{{navItem.uisref}}'>{{navItem.name}}</a>
-        </li>
-        <!--
-        <li ui-sref-active="active">
-          <a ui-sref="home">{{'HOME'|translate}}</a>
-        </li>
-        <li ui-sref-active="active">
-          <a ui-sref="dashboard">{{'DASHBOARD'|translate}}</a>
-        </li>
-        <li ui-sref-active="active" class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{'EXAMPLES'|translate}}
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-              <a ui-sref="examples" href="">{{'EXAMPLES'|translate}}</a>
-            </li>
-            <li>
-              <a ui-sref="bootstrapExamples" href="">{{'BOOTSTRAP EXAMPLES'|translate}}</a>
+        <li ui-sref-active="active" ng-repeat="navItem in headerNavItems" class="dropdown">
+          <a ng-if="!navItem.children" ui-sref='{{navItem.uisref}}' translate>{{navItem.name}}</a>
+          <a ng-if="navItem.children" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ><span translate>{{navItem.name}}</span><span class="caret"></span></a>
+          <ul ng-if="navItem.children" class="dropdown-menu">
+            <li ng-repeat="child in navItem.children">
+              <a ui-sref='{{child.uisref}}' href="" translate>{{child.name}}</a>
             </li>
           </ul>
-        </li>-->
+        </li>
       </div>
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">

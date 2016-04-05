@@ -38,11 +38,14 @@
 
   .config(['navigationProvider', function(navigationProvider) {
     navigationProvider.addHeaderNavItem({
-      name: 'Examples',
-      order: 3,
-      level: 1,
-      parent: null,
-      uisref: 'examples'
+      name: 'EXAMPLES',
+      children: [{
+        name: 'EXAMPLE',
+        uisref: 'examples'
+      }, {
+        name: 'BOOTSTRAP EXAMPLES',
+        uisref: 'bootstrapExamples'
+      }]
     });
   }]);
 }(angular));

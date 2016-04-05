@@ -4,13 +4,13 @@
   ng.module('app.core')
     .provider('navigation', [function() {
       var navItems = [{
-        name: 'Home',
+        name: 'HOME',
         order: 1,
         level: 1,
         parent: null,
         uisref: 'home'
       }, {
-        name: 'Dashboard',
+        name: 'DASHBOARD',
         order: 2,
         level: 1,
         parent: null,
