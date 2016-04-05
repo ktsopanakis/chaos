@@ -124,7 +124,6 @@ gulp.task('templatecache', ['clean-code'], function() {
     .pipe(gulp.dest(config.temp));
 });
 
-//TODO: bootstrap needs manually adding to the bower.jsopn the css file
 // adding dependancies
 gulp.task('wiredep', function() {
   helpers.log('Wire up the bower css js and our app js into the html');
@@ -222,5 +221,3 @@ gulp.task('serve-build', ['build'], function() {
 gulp.task('serve-dev', ['inject'], function() {
   helpers.serve(true /* isDev */ );
 });
-
-//TODO: screenfull dos not have main in bower, this has to be added:  "main":"dist/screenfull.js"
