@@ -16,12 +16,11 @@ in roder to get the root scope from the console
 in chrome black boxing in order for $log to work nicely
 
 
-//TODO: add vagrant
+
 //TODO: add resources, and communication with the server
 //TODO: add forms
 //TODO: add forms using http://schemaform.io/ logic, but not the library itself
 //TODO: manage routing with parameters, states, should hold parameters
-//TODO: gridster
 //TODO: testing
 //TODO: manage authentication/authorization/permissions/login/logout
 //TODO: add directive for tables, and create ways of getting data from server

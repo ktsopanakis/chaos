@@ -15,7 +15,8 @@ var _translations = {
     'SETTINGS': 'Settings',
     'BOOTSTRAP EXAMPLES': 'Bootstrap Examples',
     'FAST ACTIONS': 'Fast Actions',
-    'test': 'test'
+    'test': 'test',
+    'FORM EXAMPLES':'Form Example'
   },
   GR: {
     HOME: 'Αρχική',
@@ -33,6 +34,7 @@ var _translations = {
     'SETTINGS': 'Ρυθμίσεις',
     'BOOTSTRAP EXAMPLES': 'Παραδειγματα Bootstrap',
     'FAST ACTIONS': 'Γρηγορες Ενέργειες',
-    'test': 'δοκιμή'
+    'test': 'δοκιμή',
+    'FORM EXAMPLES':'Παράδειγμα φόρμας'
   }
 };
