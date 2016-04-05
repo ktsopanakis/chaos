@@ -18,7 +18,9 @@
   function appController($state, $scope, $rootScope, $log, localStorageService, $translate, controllerInitService) {
     /* jshint -W040 */
     controllerInitService.init(this, $scope, false);
-
+    $rootScope.$on('$includeContentLoaded', function(event, templateName) {
+      $log.debug(templateName + ' was loaded(ng-include)');
+    });
     $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
       $log.debug('$on $stateChangeStart from "' + fromState.name + '" to "' + toState.name + '"');
       $('footer').hide();
