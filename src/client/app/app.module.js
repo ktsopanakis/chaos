@@ -71,6 +71,8 @@
           });
       }
     ])
+    /*
+    // uncomment in order to see all events emitted
     .config(['$provide', function($provide) {
       $provide.decorator('$rootScope', ['$delegate', '$log', function($delegate, $log) {
         var _emit = $delegate.$emit;
@@ -86,12 +88,13 @@
         return $delegate;
       }]);
     }])
+    */
     .config(['$provide', function($provide) {
       $provide.decorator('$log', ['$delegate', function($delegate) {
         var debugFn = $delegate.debug;
         $delegate.debug = function() {
           var args = [].slice.call(arguments);
-          var now = moment().format('mm:ss:SSS');
+          var now = moment().format('h:mm:ss:SSS');
           args[0] = '' + now + ' - ' + args[0];
           debugFn.apply(null, args);
         };
