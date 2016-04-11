@@ -16,6 +16,6 @@
   function homeController($state, $scope, $rootScope, $log, controllerInitService) {
     /* jshint -W040 */
     controllerInitService.init(this, $scope, true);
-
+    $scope.title = 'sometitle';
   }
 })();
